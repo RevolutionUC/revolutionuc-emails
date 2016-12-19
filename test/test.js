@@ -15,6 +15,10 @@ describe('Email', () => {
     })
   })
 
+  describe('#compileSass', () => {
+    it('should compile sass to css')
+  })
+
   describe('#inlineCss', () => {
     it('should inline css', () => {
       const email = new Email()
