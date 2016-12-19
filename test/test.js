@@ -4,6 +4,18 @@ const assert = require('chai').assert
 const Email = require('../')
 
 describe('Email', () => {
+  describe('#compileTemplate', () => {
+    it('should build html given template data', () => {
+      const email = new Email()
+      const source = `<p>Hi, {{ name }}!</p>`
+      const templateData = { name: 'Foo' }
+      const result = email.compileTemplate(source, templateData)
+      const expected = `<p>Hi, Foo!</p>`
+
+      assert.equal(result, expected)
+    })
+  })
+
   describe('#compileInky', () => {
     it('should generate valid html', () => {
       const email = new Email()

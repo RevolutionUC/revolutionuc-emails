@@ -4,6 +4,7 @@ const fs = require('fs')
 const juice = require('juice')
 const Inky = require('inky').Inky
 const cheerio = require('cheerio')
+const nunjucks = require('nunjucks')
 const htmlMinify = require('html-minifier').minify
 
 class Email {
@@ -22,7 +23,7 @@ class Email {
           // compile the template into a single document with templating engine
             // if templateData, then use provided data
             // if no templateData, then output the variables
-          return data
+          return this.compileTemplate(data, templateData)
         })
         .then(data => {
           // compiles the inky html-like syntax into html for email clients
@@ -59,8 +60,14 @@ class Email {
 
   /**
    * Compiles the template into a single document with a templating engine
+   *
+   * @param {string} htmlSource
+   * @param {object} templateData
+   * @returns {string}
    */
-  compileTemplate() {}
+  compileTemplate(htmlSource, templateData) {
+    return nunjucks.renderString(htmlSource, templateData)
+  }
 
   /**
    * Compiles the inky html-like syntax into html ready for email clients
