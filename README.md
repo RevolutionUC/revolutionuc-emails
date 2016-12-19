@@ -51,6 +51,14 @@ Start by creating a new template in `templates/`. For example, a new template co
 {% endblock %}
 ```
 
+## The terrible truth about html emails
+
+> The sad truth about creating or coding HTML emails is that tables are the only things that are universally supported when it comes to email design. If you came from the world of building websites, this may seem like a stepping into Doc Brown's Delorean, charging up the Flux-capitor, and going back to the 1996. Suddenly your CSS is written with inline style tags, useful CSS properties don't work and you're burried in a sea of table tags. General rule of thumb: your email is not going to look identical in every client. And that’s OK.
+>
+> -- [Zurb docs](http://foundation.zurb.com/emails/docs/tips-tricks.html#need-to-know) 
+
+This project uses Zurb's [Inky](https://github.com/zurb/inky) library which allows us to write html5-like (inky) syntax and compile to old school html table based formats, so writing our email templates in a table format is not necessary!
+
 ## Tests
 
 Run tests with `npm test`. Check code coverage with `npm run coverage`.
