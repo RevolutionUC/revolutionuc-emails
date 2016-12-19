@@ -6,11 +6,13 @@
 
 > Transactional and marketing email templates and builder for RevolutionUC
 
-This module creates rich emails with inline css for better email client support.
+## Usage
 
-## api
+Install the module as a dependency with `npm install --save revolutionuc-email`. Next, use the api to build emails:
 
-The api allows the creation of transactional emails (ex. Mailgun).
+### api
+
+The api allows the creation of transactional emails:
 
 ```javascript
 const Email = require('revolutionuc-email')
@@ -19,6 +21,20 @@ const email = new Email()
 email.build(templateData)
 ```
 
-### Marketing emails
+### Marketing emails (templated)
 
 The email builder allows templates to be built for marketing purposes (ex. MailChimp).
+
+## Develop
+
+Get started hacking on `revolutionuc-email` by:
+
+```bash
+git clone https://github.com/revolutionuc/revolutionuc-email.git
+cd revolutionuc-email
+npm install
+```
+
+## Tests
+
+Run tests with `npm test`. Check code coverage with `npm run coverage`.
