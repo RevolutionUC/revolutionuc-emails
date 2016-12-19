@@ -47,7 +47,7 @@ class Email {
 
   getTemplate() {
     return new Promise((resolve, reject) => {
-      fs.readFile('./templates/inky.html', 'utf8', (error, data) => {
+      fs.readFile('./templates/master.html', 'utf8', (error, data) => {
         if (error) {
           reject(error)
         }
