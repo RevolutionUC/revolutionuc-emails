@@ -7,13 +7,17 @@
     "test": "./node_modules/.bin/mocha --reporter spec",
     "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
   },
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/revolutionuc/revolutionuc-email.git"
   },
   "keywords": [
     "revolutionuc",
-    "email"
+    "email",
+    "template"
   ],
   "author": "Noah Bass <noah@noahbass.com>",
   "license": "MIT",
