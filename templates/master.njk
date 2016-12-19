@@ -61,12 +61,24 @@
 
     <container>
       <row>
+        <columns>{% block body %}{% endblock %}</columns>
+      </row>
+    </container>
+
+    <container>
+      <row>
         <columns>Content here!</columns>
       </row>
       <row>
         <columns>
           <button href="#" class="large">Button</button>
         </columns>
+      </row>
+    </container>
+
+    <container>
+      <row>
+        <columns>Footer content</columns>
       </row>
     </container>
   </body>
