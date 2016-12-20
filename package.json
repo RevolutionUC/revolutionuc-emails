@@ -1,19 +1,19 @@
 {
-  "name": "revolutionuc-email",
+  "name": "revolutionuc-emails",
   "version": "0.1.0",
   "description": "Transactional and marketing email templates and builder for RevolutionUC",
   "main": "index.js",
   "scripts": {
+    "start": "./node_modules/.bin/http-server -s",
     "test": "./node_modules/.bin/mocha --reporter spec",
-    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
-    "server": "./node_modules/.bin/http-server -s"
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
   },
   "engines": {
     "node": ">=4.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/revolutionuc/revolutionuc-email.git"
+    "url": "git+https://github.com/revolutionuc/revolutionuc-emails.git"
   },
   "keywords": [
     "revolutionuc",
@@ -23,9 +23,9 @@
   "author": "Noah Bass <noah@noahbass.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/revolutionuc/revolutionuc-email/issues"
+    "url": "https://github.com/revolutionuc/revolutionuc-emails/issues"
   },
-  "homepage": "https://github.com/revolutionuc/revolutionuc-email#readme",
+  "homepage": "https://github.com/revolutionuc/revolutionuc-emails#readme",
   "dependencies": {
     "cheerio": "0.22.0",
     "html-minifier": "3.2.3",

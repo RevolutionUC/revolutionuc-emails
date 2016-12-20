@@ -1,4 +1,4 @@
-# revolutionuc-email
+# revolutionuc-emails
 
 [![MIT License](https://img.shields.io/github/license/revolutionuc/revolutionuc-email.svg?maxAge=2592000)]()
 [![Dependencies Status](https://david-dm.org/revolutionuc/revolutionuc-email/status.svg)](https://david-dm.org/revolutionuc/revolutionuc-email)
@@ -8,14 +8,14 @@
 
 ## Usage
 
-Install the module as a dependency with `npm install --save revolutionuc-email`. Next, use the api to build emails:
+Install the module as a dependency with `npm install --save revolutionuc-emails`. Next, use the api to build emails:
 
 ### api
 
 The api allows the creation of transactional emails (ex: Mailgun).
 
 ```javascript
-const Email = require('revolutionuc-email')
+const Email = require('revolutionuc-emails')
 
 const email = new Email()
 email.build(templateData)
