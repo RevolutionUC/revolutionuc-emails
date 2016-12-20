@@ -4,6 +4,14 @@ const assert = require('chai').assert
 const Email = require('../')
 
 describe('Email', () => {
+  describe('#build', () => {
+    it('should be well tested')
+  })
+
+  describe('#getTemplate', () => {
+    it('should be well tested')
+  })
+
   describe('#compileTemplate', () => {
     it('should build html given template data', () => {
       const email = new Email()
