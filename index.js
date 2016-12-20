@@ -11,9 +11,12 @@ class Email {
   constructor() {}
 
   /**
-   * Generates a fully built html email with given template data
+   * Generates a fully built html email (as a string) with given template data
    *
    * no templateData param == marketing template output
+   *
+   * @param {object} templateData
+   * @returns {Promise}
    */
   build(templateData) {
     return new Promise((resolve, reject) => {
@@ -21,34 +24,23 @@ class Email {
       this.getTemplate()
         .then(data => {
           // compile the template into a single document with templating engine
-            // if templateData, then use provided data
-            // if no templateData, then output the variables
           return this.compileTemplate(data, templateData)
         })
-        .then(data => {
-          // compiles the inky html-like syntax into html for email clients
-          return this.compileInky(data)
-        })
+        .then(this.compileInky) // compiles the inky html-like syntax into html for email clients
         .then(data => {
           // compile sass to css
           return data
         })
-        .then(data => {
-          // inline the resulting css (but leave media queries in the style tag)
-          return this.inlineCss(data)
-        })
-        .then(data => {
-          resolve(this.minifyHtml(data))
-        })
-        .catch(error => {
-          reject(error)
-        })
+        .then(this.inlineCss) // inline the resulting css (but leave media queries in the style tag)
+        .then(this.minifyHtml) // minify the resulting document
+        .then(resolve)
+        .catch(reject)
     })
   }
 
   getTemplate() {
     return new Promise((resolve, reject) => {
-      fs.readFile('./templates/master.html', 'utf8', (error, data) => {
+      fs.readFile('./templates/master.njk', 'utf8', (error, data) => {
         if (error) {
           reject(error)
         }
@@ -66,6 +58,8 @@ class Email {
    * @returns {string}
    */
   compileTemplate(htmlSource, templateData) {
+    // if templateData, then use provided data
+    // if no templateData, then output the variables
     return nunjucks.renderString(htmlSource, templateData)
   }
 
@@ -73,6 +67,7 @@ class Email {
    * Compiles the inky html-like syntax into html ready for email clients
    *
    * @param {string} inkySource
+   * @returns {string}
    */
   compileInky(inkySource) {
     const i = new Inky({}) // null
@@ -92,6 +87,7 @@ class Email {
    * Inlines external css
    *
    * @param {string} htmlSource
+   * @returns {string}
    */
   inlineCss(htmlSource) {
     // TODO: change this to juice.juiceResources (https://github.com/Automattic/juice#methods)
