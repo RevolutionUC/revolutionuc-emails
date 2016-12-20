@@ -8,40 +8,33 @@
     <!--<![endif]-->
   </head>
   <body>
+    <span style="display:none!important">Short email description... {{ shortDescription }}</span>
+
+    <row>
+      <columns small="12">
+        <center>
+          <img src="https://revolutionuc.com/logo.png" width="150" height="150" alt="RevolutionUC logo">
+        </center>
+      </columns>
+    </row>
+
+    <container>
       <row>
         <columns small="12">
-          <center>
-            <img src="https://revolutionuc.com/logo.png" width="150" height="150" title="RevolutionUC logo">
-          </center>
-        </columns>
-      </row>
-
-    <container>
-      <row>
-        <columns>{% block body %}{% endblock %}</columns>
-      </row>
-    </container>
-
-    <container>
-      <row>
-        <columns>Content here!</columns>
-      </row>
-      <row>
-        <columns>
-          <button href="#" class="large secondary">Button</button>
+          {% block body %}{% endblock %}
         </columns>
       </row>
     </container>
 
-    <container>
+    <container class="footer">
       <row>
-        <columns>
+        <columns small="12">
           <p>You are recieving this email because you registered for <a href="https://revolutionuc.com/" target="_blank">RevolutionUC</a>.</p>
         </columns>
       </row>
 
       <row>
-        <columns>
+        <columns small="12">
           <p>© 2016 RevolutionUC</p>
           <p>Old Chemistry 806B • 2851 Woodside Drive • Cincinnati, OH 45220 USA</p>
           <p><a href="mailto:info@revolutionuc.com">Contact Us</a></p>
