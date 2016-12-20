@@ -4,7 +4,7 @@
   "description": "Transactional and marketing email templates and builder for RevolutionUC",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/http-server -s",
+    "start": "./node_modules/.bin/http-server ./dist/ -s",
     "test": "./node_modules/.bin/mocha --reporter spec",
     "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
   },

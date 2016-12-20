@@ -33,6 +33,11 @@ class Email {
         })
         .then(this.inlineCss) // inline the resulting css (but leave media queries in the style tag)
         .then(this.minifyHtml) // minify the resulting document
+        .then(data => {
+          // write file to saved builds in ./dist/
+          this.saveBuild('test.html', data)
+          return data
+        })
         .then(resolve)
         .catch(reject)
     })
@@ -40,12 +45,30 @@ class Email {
 
   getTemplate() {
     return new Promise((resolve, reject) => {
-      fs.readFile('./templates/master.njk', 'utf8', (error, data) => {
+      fs.readFile('./templates/confirm.njk', 'utf8', (error, data) => {
         if (error) {
           reject(error)
         }
 
         resolve(data)
+      })
+    })
+  }
+
+  saveBuild(file, html) {
+    const distPath = './dist'
+
+    if (!fs.existsSync(distPath)) {
+      fs.mkdirSync(distPath)
+    }
+
+    return new Promise((resolve, reject) => {
+      fs.writeFile('./dist/' + file, html, (error) => {
+        if (error) {
+          reject(error)
+        } else {
+          resolve()
+        }
       })
     })
   }
