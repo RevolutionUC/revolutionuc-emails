@@ -28,6 +28,7 @@
   "homepage": "https://github.com/revolutionuc/revolutionuc-emails#readme",
   "dependencies": {
     "cheerio": "0.22.0",
+    "foundation-emails": "2.2.1",
     "html-minifier": "3.2.3",
     "inky": "1.3.7",
     "juice": "4.0.2",
