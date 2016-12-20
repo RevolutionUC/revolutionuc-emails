@@ -1,6 +1,11 @@
 coverage/
 
-# Created by https://www.gitignore.io/api/node,osx,linux,windows
+# Created by https://www.gitignore.io/api/node,osx,linux,windows,sass
+
+### Sass ###
+.sass-cache/
+*.css.map
+
 
 ### Node ###
 # Logs
