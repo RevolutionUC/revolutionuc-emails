@@ -1,95 +1,146 @@
-// Foundation for Emails by ZURB
-// foundation.zurb.com
-// Licensed under MIT Open Source
+//  Foundation for Emails Settings
+//  ------------------------------
+//
+//  Table of Contents:
+//
+//   1. Global
+//   2. Grid
+//   3. Block Grid
+//   4. Typography
+//   5. Button
+//   6. Callout
+//   7. Menu
+//   8. Thumbnail
 
-////
-/// @group global
-////
 
-/// Primary color for interactive components like links and buttons.
-/// @type Color
+// 1. Global
+// ---------
+
 $primary-color: #00c8e3;
-
-/// Secondary color, used with components that support the `.secondary` class.
-/// @type Color
 $secondary-color: #fa6f14;
-
-/// Color to indicate a positive status or action, used with the `.success` class.
-/// @type Color
 $success-color: #17e4ff;
+$warning-color: #ffae00;
+$alert-color: #ec5840;
+$light-gray: #f3f3f3;
+$medium-gray: #cacaca;
+$dark-gray: #8a8a8a;
+$black: #0a0a0a;
+$white: #fefefe;
+$pre-color: #ff6908;
+$global-width: 580px;
+$global-width-small: 95%;
+$global-gutter: 16px;
+$body-background: $light-gray;
+$container-background: $white;
+$global-padding: 16px;
+$global-margin: 16px;
+$global-radius: 3px;
+$global-rounded: 500px;
+$global-breakpoint: $global-width + $global-gutter;
 
-/// Color to indicate a caution status or action, used with the `.warning` class.
-/// @type Color
-$warning-color: #ffae00 !default;
+// 2. Grid
+// -------
 
-/// Color to indicate a negative status or action, used with the `.alert` class.
-/// @type Color
-$alert-color: #ec5840 !default;
+$grid-column-count: 12;
+$column-padding-bottom: $global-padding;
+$container-radius: 0;
 
-/// Color used for light gray UI items within Foundation.
-/// @type Color
-$light-gray: #f3f3f3 !default;
+// 3. Block Grid
+// -------------
 
-/// Color used for medium gray UI items within Foundation.
-/// @type Color
-$medium-gray: #cacaca !default;
+$block-grid-max: 8;
+$block-grid-gutter: $global-gutter;
 
-/// Color used for dark gray UI items within Foundation.
-/// @type Color
-$dark-gray: #8a8a8a !default;
+// 4. Typography
+// -------------
 
-/// Color used for black ui items within Foundation
-/// @type Color
-$black: #0a0a0a !default;
+$global-font-color: $black;
+$body-font-family: "Roboto", Helvetica, Arial, sans-serif;
+$global-font-weight: normal;
+$header-color: inherit;
+$global-line-height: 1.3;
+$global-font-size: 16px;
+$body-line-height: $global-line-height;
+$header-font-family: $body-font-family;
+$header-font-weight: $global-font-weight;
+$h1-font-size: 34px;
+$h2-font-size: 30px;
+$h3-font-size: 28px;
+$h4-font-size: 24px;
+$h5-font-size: 20px;
+$h6-font-size: 18px;
+$header-margin-bottom: 10px;
+$paragraph-margin-bottom: 10px;
+$small-font-size: 80%;
+$small-font-color: $medium-gray;
+$lead-font-size: $global-font-size * 1.25;
+$lead-line-height: 1.6;
+$text-padding: 10px;
+$subheader-lineheight: 1.4;
+$subheader-color: $dark-gray;
+$subheader-font-weight: $global-font-weight;
+$subheader-margin-top: 4px;
+$subheader-margin-bottom: 8px;
+$hr-width: $global-width;
+$hr-border: 1px solid $black;
+$hr-margin: 20px auto;
+$anchor-text-decoration: none;
+$anchor-color: $primary-color;
+$anchor-color-visited: $anchor-color;
+$anchor-color-hover: darken($primary-color, 10%);
+$anchor-color-active: $anchor-color-hover;
+$stat-font-size: 40px;
 
-/// Color used for white ui items within Foundation
-/// @type Color
-$white: #fefefe !default;
+// 5. Button
+// ---------
 
-/// Color used code.
-/// @type Color
-$pre-color: #ff6908 !default;
+$button-padding: (
+  tiny: 4px 8px 4px 8px,
+  small: 5px 10px 5px 10px,
+  default: 8px 16px 8px 16px,
+  large: 10px 20px 10px 20px,
+);
+$button-font-size: (
+  tiny: 10px,
+  small: 12px,
+  default: 16px,
+  large: 20px,
+);
+$button-color: $white;
+$button-color-alt: $medium-gray;
+$button-font-weight: bold;
+$button-margin: 0 0 $global-margin 0;
+$button-background: $primary-color;
+$button-border: 2px solid $button-background;
+$button-radius: $global-radius;
+$button-rounded: $global-rounded;
 
-/// Width of the container.
-/// @type Number
-$global-width: 580px !default;
+// 6. Callout
+// ----------
 
-/// Width of the container on small screens.
-/// @type Length
-$global-width-small: 95% !default;
+$callout-background: $white;
+$callout-background-fade: 85%;
+$callout-padding: 10px;
+$callout-margin-bottom: $global-margin;
+$callout-border: 1px solid darken($callout-background, 20%);
+$callout-border-secondary: 1px solid darken($secondary-color, 20%);
+$callout-border-success: 1px solid darken($success-color, 20%);
+$callout-border-warning: 1px solid darken($warning-color, 20%);
+$callout-border-alert: 1px solid darken($alert-color, 20%);
 
-/// Gutter for grid elements.
-/// @type length
-$global-gutter: 16px !default;
+// 7. Menu
+// -------
 
-/// Body background color.
-/// @type Length
-$body-background: $light-gray !default;
+$menu-item-padding: 10px;
+$menu-item-gutter: 10px;
+$menu-item-color: $primary-color;
 
-/// Color for the container background
-/// @type Color
-$container-background: $white !default;
+// 8. Thumbnail
+// ------------
 
-/// Global padding.
-/// @type Number
-$global-padding: 16px !default;
-
-/// Global margin. Margin requires a capital 'M' to workin Outlook.com
-/// @type Number
-$global-margin: 16px !default;
-
-/// Global raidus of radius-corners.
-/// @type Number
-$global-radius: 3px !default;
-
-/// Global rounded radius of rounded-corners.
-/// @type Number
-$global-rounded: 500px !default;
-
-/// Global media query to switch from desktop to mobile styles.
-/// @type String
-$global-breakpoint: $global-width + $global-gutter !default;
-
-.wrapper {
-  width: 100%;
-}
+$thumbnail-border: solid 4px $white;
+$thumbnail-margin-bottom: $global-margin;
+$thumbnail-shadow: 0 0 0 1px rgba($black, 0.2);
+$thumbnail-shadow-hover: 0 0 6px 1px rgba($primary-color, 0.5);
+$thumbnail-transition: box-shadow 200ms ease-out;
+$thumbnail-radius: $global-radius;
