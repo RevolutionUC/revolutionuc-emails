@@ -34,7 +34,7 @@ The email builder allows templates to be built ready with variable placeholders 
 
 ## Develop
 
-Get started hacking on `revolutionuc-email` by:
+Get started hacking on revolutionuc-emails by:
 
 ```bash
 git clone https://github.com/revolutionuc/revolutionuc-email.git
