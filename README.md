@@ -12,7 +12,7 @@ Install the module as a dependency with `npm install --save revolutionuc-emails`
 
 ### api
 
-The api allows the creation of transactional emails (ex: Mailgun).
+The api allows the creation of html and plain text based transactional emails (ex: Mailgun).
 
 ```javascript
 const Email = require('revolutionuc-emails')
@@ -23,8 +23,8 @@ const templateData = {
   subject: 'Email subject', // required
   shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.' // required, this is shown next to the subject in most email clients
 }
-email.build(template, templateData)
-  .then(console.log)
+email.build('html', template, templateData)
+  .then(console.log) // resultant html as a string
   .catch(console.error)
 ```
 
