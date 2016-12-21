@@ -18,11 +18,12 @@ The api allows the creation of transactional emails (ex: Mailgun).
 const Email = require('revolutionuc-emails')
 
 const email = new Email()
+const template = 'welcome' // choose from templates in `./templates/`
 const templateData = {
   subject: 'Email subject', // required
   shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.' // required, this is shown next to the subject in most email clients
 }
-email.build(templateData)
+email.build(template, templateData)
   .then(console.log)
   .catch(console.error)
 ```
