@@ -22,4 +22,4 @@ if (!templateName) {
 console.info(`Building template '${templateName}'...`)
 
 const builder = new DistBuilder()
-builder.saveBuild('html', templateName)
+builder.saveBuild(templateName)

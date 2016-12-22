@@ -25,8 +25,10 @@ const templateData = {
   subject: 'Email subject', // required
   shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.' // required, this is shown next to the subject in most email clients
 }
-email.build('html', template, templateData)
-  .then(console.log) // resultant html as a string
+email.build(template, templateData)
+  .then(result => {
+    console.log(result.html, result.text) // html and plain text version of the email
+  })
   .catch(console.error)
 ```
 
@@ -39,8 +41,8 @@ The email builder allows templates to be built ready with variable placeholders 
 Get started hacking on revolutionuc-emails by:
 
 ```bash
-git clone https://github.com/revolutionuc/revolutionuc-email.git
-cd revolutionuc-email
+git clone https://github.com/revolutionuc/revolutionuc-emails.git
+cd revolutionuc-emails
 npm install
 ```
 
@@ -56,6 +58,13 @@ Start by creating a new template in `templates/`. For example, a new template co
 {% block body %}
 <h1>My awesome template!</h1>
 {% endblock %}
+```
+
+Then, to get a preview of your template, build it to the `./dist/` folder (example with the 'welcome' template):
+
+```bash
+node bin/templateBuilder.js --template welcome # builds welcome.html and welcome.txt to `./dist/`
+npm start # open https://localhost:8080/
 ```
 
 ## The terrible truth about html emails
