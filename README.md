@@ -1,10 +1,10 @@
 # revolutionuc-emails
 
-[![MIT License](https://img.shields.io/github/license/revolutionuc/revolutionuc-email.svg?maxAge=2592000)](LICENSE)
+[![MIT License](https://img.shields.io/github/license/revolutionuc/revolutionuc-emails.svg?maxAge=2592000)](LICENSE)
 ![stability-wip](https://img.shields.io/badge/stability-work_in_progress-yellow.svg)
 [![Build Status](https://travis-ci.org/RevolutionUC/revolutionuc-emails.svg?branch=master)](https://travis-ci.org/RevolutionUC/revolutionuc-emails)
-[![Dependencies Status](https://david-dm.org/revolutionuc/revolutionuc-email/status.svg)](https://david-dm.org/revolutionuc/revolutionuc-email)
-[![Dependencies Status](https://david-dm.org/revolutionuc/revolutionuc-email/dev-status.svg)](https://david-dm.org/revolutionuc/revolutionuc-email?type=dev)
+[![dependencies Status](https://david-dm.org/revolutionuc/revolutionuc-emails/status.svg)](https://david-dm.org/revolutionuc/revolutionuc-emails)
+[![devDependencies Status](https://david-dm.org/revolutionuc/revolutionuc-emails/dev-status.svg)](https://david-dm.org/revolutionuc/revolutionuc-emails?type=dev)
 
 > Transactional and marketing email templates and builder for RevolutionUC
 
