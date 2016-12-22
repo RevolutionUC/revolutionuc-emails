@@ -1,6 +1,8 @@
 # revolutionuc-emails
 
-[![MIT License](https://img.shields.io/github/license/revolutionuc/revolutionuc-email.svg?maxAge=2592000)]()
+[![MIT License](https://img.shields.io/github/license/revolutionuc/revolutionuc-email.svg?maxAge=2592000)](LICENSE)
+![stability-wip](https://img.shields.io/badge/stability-work_in_progress-yellow.svg)
+[![Travis branch](https://img.shields.io/travis/revolutionuc/revolutionuc-emails.svg)](https://travis-ci.org/revolutionuc/revolutionuc-emails)
 [![Dependencies Status](https://david-dm.org/revolutionuc/revolutionuc-email/status.svg)](https://david-dm.org/revolutionuc/revolutionuc-email)
 [![Dependencies Status](https://david-dm.org/revolutionuc/revolutionuc-email/dev-status.svg)](https://david-dm.org/revolutionuc/revolutionuc-email?type=dev)
 
