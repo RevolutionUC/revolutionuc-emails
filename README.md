@@ -60,12 +60,7 @@ Start by creating a new template in `templates/`. For example, a new template co
 {% endblock %}
 ```
 
-Then, to get a preview of your template, build it to the `./dist/` folder (example with the 'welcome' template):
-
-```bash
-node bin/templateBuilder.js --template welcome # builds welcome.html and welcome.txt to `./dist/`
-npm start # open https://localhost:8080/
-```
+Then, to get a preview of your template, run `npm start`. This builds all templates to `./dist/` and runs a small file server to serve the html and plain text files. When a change is made to a templates, that template is rebuilt.
 
 ## The terrible truth about html emails
 
