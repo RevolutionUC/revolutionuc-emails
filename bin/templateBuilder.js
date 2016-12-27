@@ -10,7 +10,29 @@ const DistBuilder = require('../lib/DistBuilder')
 const watcher = chokidar.watch('./templates/*.njk')
 
 // build all the templates to `./dist/`
-watcher.on('ready', () => {
+watcher.on('ready', () => buildTemplates())
+
+watcher.on('change', path => {
+  console.info(`File ${path} changed. Building template '${path}'...`)
+
+  // rebuild all templates if change is made to the master template
+  if (path.includes('master.njk')) {
+    buildTemplates()
+    return
+  }
+
+  buildTemplate(path)
+})
+
+// start the http server
+const server = httpServer.createServer({ root: './dist/' })
+server.listen(8080)
+console.info('File server working on http://localhost:8080')
+
+/**
+ * Builds all templates
+ */
+const buildTemplates = () => {
   console.info('Building all templates to `./dist/`')
 
   // remove `./dist/` before building the templates
@@ -22,17 +44,7 @@ watcher.on('ready', () => {
   for (const template of templates) {
     buildTemplate(template)
   }
-})
-
-watcher.on('change', path => {
-  console.info(`File ${path} changed. Building template '${path}'...`)
-  buildTemplate(path)
-})
-
-// start the http server
-const server = httpServer.createServer({ root: './dist/' })
-server.listen(8080)
-console.info('File server working on http://localhost:8080')
+}
 
 /**
  * @param {string} templatePath
