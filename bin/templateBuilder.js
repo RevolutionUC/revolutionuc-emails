@@ -6,14 +6,19 @@ const httpServer = require('http-server')
 const chokidar = require('chokidar')
 const DistBuilder = require('../lib/DistBuilder')
 
-// watch all the .njk files in templates/
-const watcher = chokidar.watch('./templates/*.njk')
+// watch all the .njk files in templates/ and styles in templates/scss/
+const watcher = chokidar.watch(['./templates/*.njk', './templates/scss/*/**.scss'])
 
 // build all the templates to `./dist/`
 watcher.on('ready', () => buildTemplates())
 
 watcher.on('change', path => {
-  console.info(`File ${path} changed. Building template '${path}'...`)
+  console.info(`File ${path} changed...`)
+
+  if (!path.includes('.njk')) {
+    buildTemplates()
+    return
+  }
 
   // rebuild all templates if change is made to the master template
   if (path.includes('master.njk')) {
