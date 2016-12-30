@@ -53,7 +53,7 @@ npm install
 Start by creating a new template in `templates/`. For example, a new template could be called `awesome.njk` which extends `master.njk`. An example template looks like:
 
 ```njk
-{% extends 'master.njk' %}
+{% extends 'templates/master.njk' %}
 
 {% block body %}
 <h1>My awesome template!</h1>
