@@ -34,7 +34,11 @@ email.build(template, templateData)
 
 ### Marketing emails (templated)
 
-The email builder allows templates to be built ready with variable placeholders for marketing purposes (ex: MailChimp).
+The email builder allows templates to be built ready with variable placeholders for marketing purposes (ex: MailChimp). To build an email ready for MailChimp, simply pass `null` for template data:
+
+```javascript
+email.build('welcome', null) // builds to `./dist/welcome.html` and `./dist/welcome.txt`
+```
 
 ## Develop
 
