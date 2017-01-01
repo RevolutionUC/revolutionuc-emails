@@ -30,7 +30,7 @@ watcher.on('change', path => {
 })
 
 // start the http server
-const server = httpServer.createServer({ root: './dist/' })
+const server = httpServer.createServer({ root: './dist/', cache: -1 })
 server.listen(8080)
 console.info('File server working on http://localhost:8080')
 
