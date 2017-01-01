@@ -1,0 +1,12 @@
+.container {
+  &.footer {
+    p {
+      color: $medium-gray;
+
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
+    }
+  }
+}

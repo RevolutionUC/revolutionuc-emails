@@ -1,0 +1,14 @@
+.container {
+  &.main {
+    background: $white;
+
+    .main__header {
+      font-size: 18px;
+      color: $dark-gray;
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+}
