@@ -13,15 +13,34 @@
     <row>
       <columns small="12">
         <center>
-          <img src="https://revolutionuc.com/logo.png" width="150" height="150" alt="RevolutionUC logo">
+          <a href="https://revolutionuc.com/" target="_blank"><img src="https://revolutionuc.com/logo.png" width="150" height="150" alt="RevolutionUC logo"></a>
         </center>
       </columns>
     </row>
 
-    <container>
+    <container class="main">
       <row>
         <columns small="12">
-          {% block body %}{% endblock %}
+          <br />
+          <h1 class="main__header"><a href="https://revolutionuc.com/" target="_blank">RevolutionUC - Spring 2017</a></h1>
+
+          {% block main %}{% endblock %}
+
+          <p>Questions? Send us an email at <a href="mailto:info@revolutionuc.com">info@revolutionuc.com</a>!</p>
+          <hr />
+        </columns>
+      </row>
+
+      <row class="socials">
+        {# social media links #}
+        <columns small="2" class="socials__item small-offset-3">
+          <p class="text-center"><a href="https://www.facebook.com/RevolutionUC" target="_blank">Facebook icon</a></p>
+        </columns>
+        <columns small="2" class="socials__item small-offset-3">
+          <p class="text-center"><a href="https://twitter.com/Revolution_UC" target="_blank">Twitter icon</a></p>
+        </columns>
+        <columns small="2" class="socials__item small-offset-3">
+          <p class="text-center"><a href="https://RevolutionUC.com" target="_blank">RevolutionUC.com</a></p>
         </columns>
       </row>
     </container>
@@ -29,15 +48,15 @@
     <container class="footer">
       <row>
         <columns small="12">
+          <br />
           <p>You are recieving this email because you registered for <a href="https://revolutionuc.com/" target="_blank">RevolutionUC</a>.</p>
-        </columns>
-      </row>
 
-      <row>
-        <columns small="12">
-          <p>© 2016 RevolutionUC</p>
-          <p>Old Chemistry 806B • 2851 Woodside Drive • Cincinnati, OH 45220 USA</p>
+          <p>Our mailing address is:</p>
+          <p>Old Chemistry 806B<br />2851 Woodside Drive<br />Cincinnati, OH 45220 USA</p>
+
           <p><a href="mailto:info@revolutionuc.com">Contact Us</a></p>
+
+          <p>© 2017 RevolutionUC</p>
         </columns>
       </row>
     </container>
