@@ -32,6 +32,17 @@ email.build(template, templateData)
   .catch(console.error)
 ```
 
+or to send the email with Mailgun:
+
+```javascript
+// ...
+const email = new Email(mailgunApiKey, mailgunDomain)
+// ...
+email.build(template, templateData, 'info@revolutionuc.com', 'you@example.com')
+  .then(console.log) // built email that was sent by mailgun
+  .catch(console.error)
+```
+
 ### Marketing emails (templated)
 
 The email builder allows templates to be built ready with variable placeholders for marketing purposes (ex: MailChimp). To build an email ready for MailChimp, simply pass `null` for template data:
