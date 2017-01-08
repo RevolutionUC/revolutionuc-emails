@@ -48,6 +48,7 @@ Get started hacking on revolutionuc-emails by:
 git clone https://github.com/revolutionuc/revolutionuc-emails.git
 cd revolutionuc-emails
 npm install
+npm start
 ```
 
 ### Creating a new email template
@@ -75,5 +76,11 @@ Then, to get a preview of your template, run `npm start`. This builds all templa
 This project uses Zurb's [Inky](https://github.com/zurb/inky) library which allows us to write html5-like (inky) syntax and compile to old school html table based formats, so writing our email templates in a table format is not necessary!
 
 ## Tests
+
+### Real email client tests
+
+Get an api key from [Mailgun](https://www.mailgun.com/). Copy `.env.example` to `.env` with `cp .env.example .env`, place the Mailgun api key and domain in `.env`, specify an email address, template, and template data to send to in `bin/testEmail.js`, then run `node bin/testEmail.js` to send a test email.
+
+### Unit tests
 
 Run tests with `npm test`. Check code coverage with `npm run coverage`.
