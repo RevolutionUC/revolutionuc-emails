@@ -1,6 +1,6 @@
 {# general - template for emails with regular content #}
 
-{% extends 'templates/master.njk' %}
+{% extends dirname + 'master.njk' %}
 
 {% block main %}
   {% if body %}
