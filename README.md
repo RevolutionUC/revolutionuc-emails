@@ -58,6 +58,7 @@ Get started hacking on revolutionuc-emails by:
 ```bash
 git clone https://github.com/revolutionuc/revolutionuc-emails.git
 cd revolutionuc-emails
+cp .env.example .env
 npm install
 npm start
 ```
