@@ -38,7 +38,7 @@ or to send the email with Mailgun:
 // ...
 const email = new Email(mailgunApiKey, mailgunDomain)
 // ...
-email.build(template, templateData, 'info@revolutionuc.com', 'you@example.com')
+email.build(template, templateData, 'RevolutionUC <info@revolutionuc.com>', 'you@example.com')
   .then(console.log) // built email that was sent by mailgun
   .catch(console.error)
 ```
