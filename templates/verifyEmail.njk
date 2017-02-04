@@ -1,0 +1,23 @@
+{% extends dirname + 'master.njk' %}
+
+{#
+  Additional arguements for this template:
+    - firstName (the user's first name)
+    - verificationUrl (a url)
+#}
+
+{% block main %}
+<h2>Hey {{ firstName if firstName else '*|FNAME|*' }}!</h2>
+
+<p>To complete your registration for RevolutionUC, please <a target="_blank" href="{{ verificationUrl if verificationUrl else '#' }}">verify your email address</a>.</p>
+
+<row>
+  <columns>
+    <center>
+      <button class="large secondary small-expanded" href="{{ verificationUrl if verificationUrl else '#' }}" target="_blank">Verify Email</button>
+    </center>
+  </columns>
+</row>
+
+<p>Your registration will not be complete until you verify.</p>
+{% endblock %}
