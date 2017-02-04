@@ -1,4 +1,5 @@
 body {
   background-color: $light-gray; // Most email clients strip styles out of the html tag, so apply
                                  // the background color to the body instead
+  padding-top: $global-padding;
 }
