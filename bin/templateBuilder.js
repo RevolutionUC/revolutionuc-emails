@@ -7,7 +7,7 @@ const chokidar = require('chokidar')
 const DistBuilder = require('../lib/DistBuilder')
 
 // watch all the .njk files in templates/ and styles in templates/scss/
-const watcher = chokidar.watch(['./templates/*.njk', './templates/scss/*/**.scss'])
+const watcher = chokidar.watch(['./templates/*.njk', './templates/scss/**/*.scss'])
 
 // build all the templates to `./dist/`
 watcher.on('ready', () => buildTemplates())
