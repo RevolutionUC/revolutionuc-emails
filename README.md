@@ -51,6 +51,23 @@ The email builder allows templates to be built ready with variable placeholders 
 email.build('welcome', null) // builds to `./dist/welcome.html` and `./dist/welcome.txt`
 ```
 
+### Available templates
+
+All templates take a `subject` and `shortDescription` template variables by default. In addition, each template has its own variables:
+
+#### `general`
+
+  - body (text)
+
+#### `verifyEmail`
+
+  - `firstName` (the user's first name)
+  - `verificationUrl` (a url)
+
+#### `welcome`
+
+*No additional variables*
+
 ## Develop
 
 Get started hacking on revolutionuc-emails by:

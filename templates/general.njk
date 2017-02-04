@@ -2,6 +2,11 @@
 
 {% extends dirname + 'master.njk' %}
 
+{#
+Additional arguements for this template:
+  - body (text)
+#}
+
 {% block main %}
   {% if body %}
     {{ body }}
