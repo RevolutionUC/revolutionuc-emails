@@ -1,4 +1,10 @@
 .container {
+  max-width: $global-width;
+  width: initial !important; // overrides the default width that foundation emails
+                             // sets for no good reason
+}
+
+.row {
   &.main {
     background: $white;
 

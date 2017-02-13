@@ -10,16 +10,18 @@
   <body>
     <span style="display:none!important" mc:edit="shortDescription">{{ shortDescription }}</span>
 
-    <row>
-      <columns small="12">
-        <center>
-          <a href="https://revolutionuc.com/" target="_blank"><img src="https://revolutionuc.com/imgs/revuc.png" width="150" height="150" alt="RevolutionUC logo"></a>
-        </center>
-      </columns>
-    </row>
-
-    <container class="main">
+    <container>
       <row>
+        <columns small="12">
+          {# <center> #}
+            <a href="https://revolutionuc.com/" target="_blank"><img class="float-center" src="https://revolutionuc.com/imgs/revuc.png" width="150" height="150" alt="RevolutionUC logo"></a>
+          {# </center> #}
+        </columns>
+      </row>
+    </container>
+
+    <container>
+      <row class="main">
         <columns small="12">
           <br />
           <h1 class="main__header"><a href="https://revolutionuc.com/" target="_blank">RevolutionUC - Spring 2017</a></h1>
@@ -39,7 +41,9 @@
       <row class="socials">
         {# social media links #}
         <columns small="2" class="socials__item small-offset-3">
-          <p class="text-center"><a href="https://www.facebook.com/RevolutionUC" target="_blank">Facebook icon</a></p>
+          <p class="text-center"><a href="https://www.facebook.com/RevolutionUC" target="_blank">
+            <img src="https://placehold.it/50x50" alt="Facebook icon">
+          </a></p>
         </columns>
         <columns small="2" class="socials__item small-offset-3">
           <p class="text-center"><a href="https://twitter.com/Revolution_UC" target="_blank">Twitter icon</a></p>
@@ -50,8 +54,8 @@
       </row>
     </container>
 
-    <container class="footer">
-      <row>
+    <container>
+      <row class="footer">
         <columns small="12">
           <br />
           <p>You are recieving this email because you registered for <a href="https://revolutionuc.com/" target="_blank">RevolutionUC</a>.</p>
