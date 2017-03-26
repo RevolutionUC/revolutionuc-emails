@@ -43,6 +43,21 @@ email.build(template, templateData, 'RevolutionUC <info@revolutionuc.com>', 'you
   .catch(console.error)
 ```
 
+Another example with a `verifyEmail` template:
+
+```javascript
+const email = new Email(mailgunApiKey, mailgunDomain)
+const template = 'verifyEmail' // choose from templates in `./templates/`
+const templateData = {
+  subject: 'Verify Your Email Address',
+  shortDescription: 'Please verify your email address for RevolutionUC.',
+  waitlist: false
+}
+email.build(template, templateData, 'RevolutionUC <info@revolutionuc.com>', 'you@example.com')
+  .then(console.log) // built email that was sent by mailgun
+  .catch(console.error)
+```
+
 ### Marketing emails (templated)
 
 The email builder allows templates to be built ready with variable placeholders for marketing purposes (ex: MailChimp). To build an email ready for MailChimp, simply pass `null` for template data:
@@ -55,6 +70,12 @@ email.build('welcome', null) // builds to `./dist/welcome.html` and `./dist/welc
 
 All templates take a `subject` and `shortDescription` template variables by default. In addition, each template has its own variables:
 
+#### `confirmAttendance`
+
+  - `firstName`
+  - `yesConfirmationUrl` (confirmation url for a "yes" response)
+  - `noConfirmationURL` (confirmation url for a "no" response)
+
 #### `general`
 
   - body (text)
@@ -63,6 +84,7 @@ All templates take a `subject` and `shortDescription` template variables by defa
 
   - `firstName` (the user's first name)
   - `verificationUrl` (a url)
+  - `waitlist` (boolean: whether or not to display the waitlist text to the user)
 
 #### `welcome`
 
