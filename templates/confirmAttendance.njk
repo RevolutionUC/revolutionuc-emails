@@ -1,0 +1,34 @@
+{% extends dirname + 'master.njk' %}
+
+{#
+  Additional arguements for this template:
+    - firstName (the user's first name)
+    - yesConfirmationUrl (a url)
+    - noConfirmationURL (a url)
+#}
+
+{% block main %}
+<h2>Hey {{ firstName if firstName else '*|FNAME|*' }}!</h2>
+
+<p>We need you to confirm your attendance for RevolutionUC.</p>
+
+<p>A <strong>"Yes"</strong> means that you will be attending the hackathon. If you are coming to the event, select this option. If you select yes and do not attend, you will be barred from future RevolutionUC's. A <strong>"No"</strong> means that you will not be attending the event. If you have teammates who have not received the option to confirm their attendance, email <a href="mailto:info@revolutionuc.com">info@revolutionuc.com</a> with their names and emails.</p>
+
+<row>
+  <columns>
+    <center>
+      <button class="large secondary small-expanded" href="{{ yesConfirmationUrl if yesConfirmationUrl else '#' }}" target="_blank">Yes - Im attending RevolutionUC</button>
+    </center>
+  </columns>
+</row>
+
+<row>
+  <columns>
+    <center>
+      <button class="large primary small-expanded" href="{{ noConfirmationURL if noConfirmationURL else '#' }}" target="_blank">No - Im not attending RevolutionUC</button>
+    </center>
+  </columns>
+</row>
+
+<p>Note: not selecting "yes" or "no" is automatically a "no".</p>
+{% endblock %}
