@@ -8,7 +8,7 @@
 #}
 
 {% block main %}
-<h2>Hey {{ firstName if firstName else '*|FNAME|*' }}!</h2>
+<h2>Hi {{ firstName if firstName else '*|FNAME|*' }}!</h2>
 
 <p>We need you to confirm your attendance for RevolutionUC.</p>
 
@@ -17,7 +17,7 @@
 <row>
   <columns>
     <center>
-      <button class="large secondary small-expanded" href="{{ yesConfirmationUrl if yesConfirmationUrl else '#' }}" target="_blank">Yes - Im attending RevolutionUC</button>
+      <button class="large secondary small-expanded" href="{{ yesConfirmationUrl if yesConfirmationUrl else '#' | safe }}" target="_blank">Yes - I'm attending RevolutionUC</button>
     </center>
   </columns>
 </row>
@@ -25,7 +25,7 @@
 <row>
   <columns>
     <center>
-      <button class="large primary small-expanded" href="{{ noConfirmationUrl if noConfirmationUrl else '#' }}" target="_blank">No - Im not attending RevolutionUC</button>
+      <button class="large primary small-expanded" href="{{ noConfirmationUrl if noConfirmationUrl else '#' | safe }}" target="_blank">No - I'm not attending RevolutionUC</button>
     </center>
   </columns>
 </row>
