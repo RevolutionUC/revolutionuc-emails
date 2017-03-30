@@ -5,10 +5,15 @@
     - firstName (the user's first name)
     - yesConfirmationUrl (a url)
     - noConfirmationURL (a url)
+    - corrected (boolean - whether this email was a corrected email)
 #}
 
 {% block main %}
 <h2>Hi {{ firstName if firstName else '*|FNAME|*' }}!</h2>
+
+{% if corrected %}
+  <p>Note: This email is the corrected attendance confirmation email. You can ignore the previous email.</p>
+{% endif %}
 
 <p>We need you to confirm your attendance for RevolutionUC.</p>
 
