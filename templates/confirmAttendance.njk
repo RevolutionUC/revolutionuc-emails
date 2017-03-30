@@ -12,23 +12,25 @@
 
 <p>We need you to confirm your attendance for RevolutionUC.</p>
 
-<p>A <strong>"Yes"</strong> means that you will be attending the hackathon. If you are coming to the event, select this option. If you select yes and do not attend, you will be barred from future RevolutionUC's. A <strong>"No"</strong> means that you will not be attending the event. If you have teammates who have not received the option to confirm their attendance, email <a href="mailto:info@revolutionuc.com">info@revolutionuc.com</a> with their names and emails.</p>
+<p>A <strong>Yes</strong> means that you will be attending the hackathon. If you are coming to the event, select this option. Please only select yes if you are attending the event, if you select yes and do not attend, not only will you deny another hacker an opportunity to participate, but it may have implications on your acceptance to future RevolutionUC’s. A <strong>No</strong> means that you will not be attending the event. If you have teammates who have not received the option to confirm their attendance, please first choose <strong>Yes</strong> below, then email <a href="mailto:info@revolutionuc.com">info@revolutionuc.com</a> with their names and emails.</p>
 
-<row>
-  <columns>
-    <center>
-      <button class="large secondary small-expanded" href="{{ yesConfirmationUrl if yesConfirmationUrl else '#' | safe }}" target="_blank">Yes - I'm attending RevolutionUC</button>
-    </center>
-  </columns>
-</row>
+<p>
+  <center>
+    <button class="large secondary expanded" href="{{ yesConfirmationUrl if yesConfirmationUrl else 'https://example.com/' | safe }}" target="_blank">Yes - I’m attending RevolutionUC</button>
+  </center>
+</p>
 
-<row>
-  <columns>
-    <center>
-      <button class="large primary small-expanded" href="{{ noConfirmationUrl if noConfirmationUrl else '#' | safe }}" target="_blank">No - I'm not attending RevolutionUC</button>
-    </center>
-  </columns>
-</row>
+<p>
+  <center>
+    <button class="large success expanded" href="{{ noConfirmationUrl if noConfirmationUrl else 'https://example.com/' | safe }}" target="_blank">No - I’m not attending RevolutionUC</button>
+  </center>
+</p>
 
-<p>Note: not selecting "yes" or "no" is automatically a "no".</p>
+<p>If you select <strong>Yes</strong>, you will receive a welcome email with info for the day of the event.</p>
+
+<p><strong>What if I confirm my attendance now and later can’t attend?</strong><br />
+Please send us an email at <a href="mailto:info@revolutionuc.com">info@revolutionuc.com</a> ASAP to release your spot. If you confirm your attendance and don’t show there could be penalties on attending a future RevolutionUC.</p>
+
+<p><strong>I accidently select No!</strong><br />
+Please email us immediately at <a href="mailto:info@revolutionuc.com">info@revolutionuc.com</a>. If you selected no and can later attend, we’ll do our best, but please understand that we may have no remaining space.</p>
 {% endblock %}
