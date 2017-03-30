@@ -76,6 +76,10 @@ All templates take a `subject` and `shortDescription` template variables by defa
   - `yesConfirmationUrl` (confirmation url for a "yes" response)
   - `noConfirmationUrl` (confirmation url for a "no" response)
 
+#### `firstInfoEmail`
+
+  - `firstName`
+
 #### `general`
 
   - body (text)
