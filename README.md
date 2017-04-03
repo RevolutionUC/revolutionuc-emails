@@ -76,6 +76,7 @@ All templates take a `subject` and `shortDescription` template variables by defa
   - `yesConfirmationUrl` (confirmation url for a "yes" response)
   - `noConfirmationUrl` (confirmation url for a "no" response)
   - `corrected` (boolean - whether this email was a corrected email)
+  - `offWaitlist` (boolean - whether to notify the user that they have been moved off the waitlist)
 
 #### `firstInfoEmail`
 
