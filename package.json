@@ -1,6 +1,6 @@
 {
   "name": "revolutionuc-emails",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "Transactional and marketing email templates and builder for RevolutionUC",
   "main": "./lib/Email.js",
   "scripts": {
