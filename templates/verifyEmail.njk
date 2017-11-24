@@ -1,4 +1,4 @@
-{% extends dirname + 'master.njk' %}
+{% extends dirname + '/master.njk' %}
 
 {#
   Additional arguements for this template:
@@ -7,21 +7,15 @@
 #}
 
 {% block main %}
-<h2>Hey {{ firstName if firstName else '*|FNAME|*' }}!</h2>
+<h1>Hey {{ firstName if firstName else '*|FNAME|*' }}!</h1>
 
-<p>To complete your {% if waitlist %}waitlist{% endif %} registration for RevolutionUC, please <a target="_blank" href="{{ verificationUrl if verificationUrl else '#' }}">verify your email address</a>.</p>
+<p>To complete your {% if waitlist %}waitlist{% endif %} registration for RevolutionUC, please <a href="{{ verificationUrl if verificationUrl else '#' }}" target="_blank">verify your email address</a>.<p>
 
 {% if waitlist %}
-  <p>Note: You are currently on the waitlist! We have hit our capacity, but spots may open up. Please confirm your email address and monitor your inbox for further notification.</p>
+  <p>Note: You are currently on the waitlist! We have hit our capacity, but spots may open up. Please confirm your email address and monitor your inbox for further notification.<p>
 {% endif %}
 
-<row>
-  <columns>
-    <center>
-      <button class="large secondary small-expanded" href="{{ verificationUrl if verificationUrl else '#' }}" target="_blank">Verify Email</button>
-    </center>
-  </columns>
-</row>
+<button href="{{ verificationUrl if verificationUrl else '#' }}" target="_blank">Verify Email</button>
 
-<p>Your registration will not be complete until you verify.</p>
+<p>Your registration will not be complete until you verify.<p>
 {% endblock %}

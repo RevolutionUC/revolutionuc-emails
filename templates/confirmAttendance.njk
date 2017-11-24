@@ -1,20 +1,15 @@
-{% extends dirname + 'master.njk' %}
+{% extends dirname + '/master.njk' %}
 
 {#
   Additional arguements for this template:
     - firstName (the user's first name)
     - yesConfirmationUrl (a url)
     - noConfirmationURL (a url)
-    - corrected (boolean - whether this email was a corrected email)
     - offWaitlist (boolean - whether to notify the user that they have been moved off the waitlist)
 #}
 
 {% block main %}
-<h2>Hi {{ firstName if firstName else '*|FNAME|*' }}!</h2>
-
-{% if corrected %}
-  <p>Note: This email is the corrected attendance confirmation email. You can ignore the previous email.</p>
-{% endif %}
+<h1>Hi {{ firstName if firstName else '*|FNAME|*' }}!</h1>
 
 {% if offWaitlist %}
     {# the hacker has been taken off the waitlist and onto the normal list, so make a note to the hacker #}

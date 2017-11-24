@@ -1,23 +1,7 @@
-'use strict'
-
-require('dotenv').config()
-
 const assert = require('chai').assert
-const Email = require('../')
+const nock = require('nock')
+const { send } = require('../index')
 
-describe('Email', () => {
-  describe('#sendMail', () => {
-    it('should return data when no emails are given', (done) => {
-      const email = new Email()
-      email.build('welcome', { subject: 'Test email', shortDescription: 'Simple test email...' })
-        .then(result => {
-          assert.ok(result.text)
-          assert.ok(result.html)
-          done()
-        })
-        .catch(error => {
-          throw new Error(error)
-        })
-    })
-  })
+describe('send', () => {
+  it('should be well tested')
 })
