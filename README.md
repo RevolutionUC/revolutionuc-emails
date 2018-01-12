@@ -12,18 +12,31 @@
 
 Install the module as a dependency with `npm install --save github:revolutionuc/revolutionuc-emails`. Next, use the api to build emails:
 
-### api
+### API
 
-The api allows the creation of html and plain text based transactional emails (ex: Mailgun).
+The API allows the creation of html and plain text based transactional emails (ex: Mailgun).
 
 ```javascript
-TODO
+const { build } = require('revolutionuc-emails')
+const template = 'welcome' // choose from templates in `./templates/`
+const templateDate = {
+  subject: 'Email subject', // required
+  shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.' // required (this is shown next to the subject in most email clients)
+}
+const html = await build(template, templateData) // returns minified html
 ```
 
 or to send the email with Mailgun:
 
 ```javascript
-TODO
+const { build, send } = require('revolutionuc-emails')
+// ...
+const html = await build(template, templateData)
+await send(mailgunApiKey, mailgunDomain, 'RevolutionUC <info@revolutionuc.com>', 'you@example.com', templateDate.subject, html)
+  // or use a promise:
+  // send(mailgunApiKey, mailgunDomain, 'RevolutionUC <info@revolutionuc.com>', 'you@example.com', templateDate.subject, html)
+    // .then(console.log)
+    // .catch(console.error)
 ```
 
 Another example with a `verifyEmail` template:
@@ -37,8 +50,11 @@ TODO
 The email builder allows templates to be built ready with variable placeholders for marketing purposes (ex: MailChimp). To build an email ready for MailChimp, simply pass `null` for template data:
 
 ```javascript
-TODO
+const { build } = require('revolutionuc-emails')
+const content = await build('welcome', null)
 ```
+
+Or use `npm run develop-build` to build to `./dist/`.
 
 ### Available templates
 
