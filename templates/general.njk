@@ -1,20 +1,18 @@
 {# general - template for emails with regular content #}
 
-{% extends dirname + 'master.njk' %}
+{% extends dirname + '/master.njk' %}
 
 {#
 Additional arguements for this template:
   - body (text)
+
+If no body is given, the template will default to the mailchimp editable body section
 #}
 
 {% block main %}
   {% if body %}
     {{ body }}
   {% else %}
-    <row>
-      <columns small="12" > {# allows for editing this content block in mailchimp #}
-        <div mc:edit="body"></div>
-      </columns>
-    </row>
+    <div mc:edit="body"></div>
   {% endif %}
 {% endblock %}

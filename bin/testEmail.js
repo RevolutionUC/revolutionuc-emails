@@ -1,31 +1,25 @@
-'use strict'
-
 require('dotenv').config()
 
-const Email = require('../')
-const mailgun = require('mailgun-js')({ apiKey: process.env.MAILGUN_API_KEY, domain: process.env.MAILGUN_DOMAIN })
+const mailgunApiKey = process.env.MAILGUN_API_KEY
+const mailgunDomain = process.env.MAILGUN_DOMAIN
+const from = 'RevolutionUC <info@revolutionuc.com>'
+const to = 'you@mail.uc.edu'
 
-const subject = 'Welcome - Hello, world!'
+const { build, send } = require('../')
 
-const email = new Email()
-email.build('welcome', { subject, shortDescription: 'Test message short description!' })
-     .then(result => {
-       const data = {
-         from: 'RevolutionUC <info@revolutionuc.com>',
-         to: 'you@example.com',
-         subject: subject,
-         text: result.text,
-         html: result.html
-       }
+const template = 'welcome' // choose from templates in `./templates/`
+const templateData = {
+  subject: 'Welcome - Hello, world!',
+  shortDescription: 'Test message short description!'
+}
 
-       mailgun.messages().send(data, (error, body) => {
-         if (error) {
-           throw new Error(error)
-         }
-
-         console.log(body)
-       })
-     })
-     .catch(error => {
-       throw new Error(error)
-     })
+build(template, templateData)
+  .then(html => {
+    return send(mailgunApiKey, mailgunDomain, from, to, templateData.subject, html)
+  })
+  .then(() => {
+    console.log(`Sent to ${to}`)
+  })
+  .catch(error => {
+    console.error(error)
+  })
