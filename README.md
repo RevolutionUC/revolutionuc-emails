@@ -19,7 +19,7 @@ The API allows the creation of html and plain text based transactional emails (e
 ```javascript
 const { build } = require('revolutionuc-emails')
 const template = 'welcome' // choose from templates in `./templates/`
-const templateDate = {
+const templateData = {
   subject: 'Email subject', // required
   shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.' // required (this is shown next to the subject in most email clients)
 }
@@ -32,10 +32,10 @@ or to send the email with Mailgun:
 const { build, send } = require('revolutionuc-emails')
 // ...
 const html = await build(template, templateData)
-await send(mailgunApiKey, mailgunDomain, 'RevolutionUC <info@revolutionuc.com>', 'you@example.com', templateDate.subject, html)
+await send(mailgunApiKey, mailgunDomain, 'RevolutionUC <info@revolutionuc.com>', 'you@example.com', templateData.subject, html)
   // or use a promise:
-  // send(mailgunApiKey, mailgunDomain, 'RevolutionUC <info@revolutionuc.com>', 'you@example.com', templateDate.subject, html)
-    // .then(console.log)
+  // send(mailgunApiKey, mailgunDomain, 'RevolutionUC <info@revolutionuc.com>', 'you@example.com', templateData.subject, html)
+    // .then(() => console.log('Done'))
     // .catch(console.error)
 ```
 
@@ -92,7 +92,7 @@ Get started hacking on revolutionuc-emails by:
 ```bash
 git clone https://github.com/revolutionuc/revolutionuc-emails.git
 cd revolutionuc-emails
-cp .env.example .env
+cp .env.example .env # replace with your api key and domain (mailgun.com to signup free - see below for other setup instructions)
 npm install
 npm start
 ```

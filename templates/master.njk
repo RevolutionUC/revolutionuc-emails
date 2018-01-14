@@ -1,7 +1,7 @@
 <heml>
   <head>
     <subject>{{ subject if subject else '*|MC:SUBJECT|*' }}</subject>
-    <preview>{{ description if description else '*|MC:DESCRIPTION|*' }}</preview>
+    <preview>{{ shortDescription if shortDescription else '*|MC:DESCRIPTION|*' }}</preview>
 
     <!--[if !mso]><!-- -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
@@ -19,9 +19,9 @@
 ; text-decoration: none; font-weight: normal; }
       p { color: #333; }
       .footer p { color: #cacaca; font-size: 14px; }
-      .footer p a { color: inherit; }
+      .footer p a { color: #cacaca; }
       column { padding-left: 16px; padding-right: 16px; }
-      button { background-color: #3754a5; margin-bottom: 16px; padding: 12px 16px; }
+      button { font-family: "Lato", sans-serif; background-color: #3754a5; margin-bottom: 16px; padding: 12px 16px; }
     </style>
   </head>
   <body>
@@ -43,12 +43,12 @@
       <row class="main">
         <column>
           <h1 class="main__header">
-            <a href="https://revolutionuc.com/" target="_blank">RevolutionUC - Spring 2018</a>
+            <a href="http://revolutionuc.com/" target="_blank">RevolutionUC - Spring 2018</a>
           </h1>
 
           {% block main %}{% endblock %}
 
-          <p>Questions? See the FAQ at <a href="https://revolutionuc.com/faq" target="_blank">revolutionuc.com/faq</a> or send us an email at <a href="mailto:info@revolutionuc.com">info@revolutionuc.com</a>!</p>
+          <p>Questions? See the FAQ at <a href="http://revolutionuc.com/faq" target="_blank">revolutionuc.com/faq</a> or send us an email at <a href="mailto:info@revolutionuc.com">info@revolutionuc.com</a>!</p>
 
           <p>
             Thanks!<br>
@@ -57,23 +57,36 @@
 
           <hr />
 
-          <container>
-            <row>
-              <column large="4">
-                <center><a href="https://www.facebook.com/RevolutionUC" target="_blank">
-                  <img >
-                </a></center>
-              </column>
-              <column large="4"><center>Twitter</center></column>
-              <column large="4"><center>Website</center></column>
-            </row>
-          </container>
+          <row>
+            <column small="3">
+              <center><a href="https://www.facebook.com/RevolutionUC" target="_blank">
+                <img src="https://d1scc4yo7jg7j0.cloudfront.net/email/social/facebook.png" width="20" height="20" />
+              </a></center>
+            </column>
+            <column small="3">
+              <center><a href="https://twitter.com/Revolution_UC" target="_blank">
+                <img src="https://d1scc4yo7jg7j0.cloudfront.net/email/social/twitter.png" width="20" height="20" />
+              </a></center>
+            </column>
+            <column small="3">
+              <center><a href="https://github.com/RevolutionUC" target="_blank">
+                <img src="https://d1scc4yo7jg7j0.cloudfront.net/email/social/github.png" width="20" height="20" />
+              </a></center>
+            </column>
+            <column small="3">
+              <center><a href="http://revolutionuc.com/" target="_blank">
+                <img src="https://d1scc4yo7jg7j0.cloudfront.net/email/social/link.png" width="20" height="20" />
+              </a></center>
+            </column>
+          </row>
+
+          <br />
         </column>
       </row>
 
       <row class="footer">
         <column>
-          <p>You are recieving this email because you registered for <a href="https://revolutionuc.com/" target="_blank">RevolutionUC</a>.</p>
+          <p>You are recieving this email because you registered for <a href="http://revolutionuc.com/" target="_blank">RevolutionUC</a>.</p>
 
           <p>Our mailing address is:</p>
           <p>Association for Computing Machinery @ UC<br />2801 UC MainStreet<br />Cincinnati, OH 45221</p>
