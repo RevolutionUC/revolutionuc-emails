@@ -69,11 +69,15 @@ All templates take a `subject` and `shortDescription` template variables by defa
 
 #### `firstInfoEmail`
 
-  - `firstName`
+  - `firstName` (the user's first name)
 
 #### `general`
 
   - body (text)
+
+#### `registrationOpen`
+
+  - `firstName` (the user's first name)
 
 #### `verifyEmail`
 

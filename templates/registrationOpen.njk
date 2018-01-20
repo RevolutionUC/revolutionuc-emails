@@ -1,0 +1,14 @@
+{% extends dirname + '/master.njk' %}
+
+{#
+  Additional arguements for this template:
+    - firstName (the user's first name)
+#}
+
+{% block main %}
+<h1>Hi, {{ firstName if firstName else '*|FNAME|*' }}!</h1>
+
+<p>We’re excited to share that registration for RevolutionUC Spring 2018 is now open!</p>
+
+<button href="http://revolutionuc.com/register/" target="_blank">Register Now</button>
+{% endblock %}
