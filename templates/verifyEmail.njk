@@ -7,7 +7,7 @@
 #}
 
 {% block main %}
-<h1>Hey {{ firstName if firstName else '*|FNAME|*' }}!</h1>
+<h1>Hey, {{ firstName if firstName else '*|FNAME|*' }}!</h1>
 
 <p>To complete your {% if waitlist %}waitlist{% endif %} registration for RevolutionUC, please <a href="{{ verificationUrl if verificationUrl else '#' }}" target="_blank">verify your email address</a>.<p>
 

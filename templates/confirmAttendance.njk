@@ -9,7 +9,7 @@
 #}
 
 {% block main %}
-<h1>Hi {{ firstName if firstName else '*|FNAME|*' }}!</h1>
+<h1>Hi, {{ firstName if firstName else '*|FNAME|*' }}!</h1>
 
 {% if offWaitlist %}
     {# the hacker has been taken off the waitlist and onto the normal list, so make a note to the hacker #}
