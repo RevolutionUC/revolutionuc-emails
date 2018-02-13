@@ -67,7 +67,11 @@ All templates take a `subject` and `shortDescription` template variables by defa
   - `noConfirmationUrl` (confirmation url for a "no" response)
   - `offWaitlist` (boolean - whether to notify the user that they have been moved off the waitlist)
 
-#### `firstInfoEmail`
+#### `confirmAttendanceFollowUp`
+
+  - `firstName` (the user's first name)
+
+#### `infoEmail1`
 
   - `firstName` (the user's first name)
 
