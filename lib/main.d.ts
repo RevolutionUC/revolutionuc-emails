@@ -15,4 +15,4 @@ interface templateData {
 
 }
 declare function build(templateName: string, templateData: templateData) : Promise<string>
-declare function send(mailgunApiKey: string, mailgunDomain: string, from: string, to: string, subject: string, html: stirng): Promise;
+declare function send(mailgunApiKey: string, mailgunDomain: string, from: string, to: string, subject: string, html: string): Promise<any>;
