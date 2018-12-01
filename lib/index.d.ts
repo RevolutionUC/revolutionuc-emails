@@ -14,5 +14,5 @@ interface templateData {
   offWaitlist: boolean
 
 }
-declare function build(templateName: string, templateData: object) : Promise<string>
+declare function build(templateName: string, templateData: templateData) : Promise<string>
 declare function send(mailgunApiKey: string, mailgunDomain: string, from: string, to: string, subject: string, html: stirng): Promise;
