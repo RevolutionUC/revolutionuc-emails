@@ -5,6 +5,7 @@
   "main": "./index.js",
   "scripts": {
     "develop-build": "node ./bin/developBuild.js",
+    "build": "node ./bin/build.js",
     "test": "./node_modules/.bin/mocha",
     "coverage": "./node_modules/.bin/nyc report ./node_modules/.bin/_mocha"
   },
