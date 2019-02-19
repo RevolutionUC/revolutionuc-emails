@@ -54,7 +54,7 @@ const { build } = require('revolutionuc-emails')
 const content = await build('welcome', null)
 ```
 
-Or use `npm run develop-build` to build to `./dist/`.
+Or use `npm run develop-build` (or `npm run build`) to build to `./dist/`.
 
 ### Available templates
 
@@ -110,7 +110,7 @@ git clone https://github.com/revolutionuc/revolutionuc-emails.git
 cd revolutionuc-emails
 cp .env.example .env # replace with your api key and domain (mailgun.com to signup free - see below for other setup instructions)
 npm install
-npm start
+npm run build # or `npm run develop-build` to watch
 ```
 
 ### Creating a new email template
@@ -127,7 +127,7 @@ Start by creating a new template in `templates/`. For example, a new template co
 {% endblock %}
 ```
 
-Then, to get a preview of your template, run `npm start`. This builds all templates to `./dist/` and runs a small file server to serve the html and plain text files. When a change is made to a templates, that template is rebuilt.
+Then, to get a preview of your template, run `npm run build`. This builds all templates to `./dist/` and runs a small file server to serve the html and plain text files. When a change is made to a templates, that template is rebuilt.
 
 ## The terrible truth about html emails
 
