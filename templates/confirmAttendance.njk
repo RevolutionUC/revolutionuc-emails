@@ -10,10 +10,6 @@
 
 {% block main %}
 
-<h3>Sorry for the confusion - if you clicked the "Yes" button on the original email, please click again</h3>
-<p>Earlier this evening, an attendance confirmation email was sent with the wrong data in error. If you clicked any of the buttons below, <b>it was not recorded</b> and you MUST click again</p>
-<p>We apologize for this mistake, and hope to see you at RevolutionUC!</p>
-
 <h1>Hi, {{ firstName if firstName else '*|FNAME|*' }}!</h1>
 
 {% if offWaitlist %}
