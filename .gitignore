@@ -1,4 +1,5 @@
 .env
+registrants.json
 coverage/
 dist/
 package-lock.json
