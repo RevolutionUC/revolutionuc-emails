@@ -15,7 +15,7 @@ __Table of Contents__
   - [Using Marketing Emails (templated)](#using-marketing-emails-templated)
   - [List of Available Templates](#list-of-available-templates)
 - [Developing](#developing)
-- [Creating and Modifying Email Templates / Styles](#creating-and-modifying-email-templates-/-styles)
+- [Creating and Modifying Email Templates / Styles](#creating-and-modifying-email-templates--styles)
 - [Using an Email Template in Mailchimp](#using-an-email-template-in-mailchimp)
 - [Using Mailchimp Variables (aka Merge Tags)](#using-mailchimp-variables-aka-merge-tags)
 - [Known Issues](#known-issues)
