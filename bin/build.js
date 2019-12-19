@@ -20,4 +20,6 @@ gulp.task('build', () => {
     .pipe(gulp.dest(distFolder))
 })
 
-gulp.start(['clean', 'build'])
+const start = gulp.series('clean', 'build')
+
+start()
