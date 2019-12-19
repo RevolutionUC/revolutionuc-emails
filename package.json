@@ -37,10 +37,10 @@
     "nunjucks": "^3.0.1"
   },
   "devDependencies": {
-    "browser-sync": "^2.18.13",
+    "browser-sync": "^2.26.7",
     "chai": "^4.1.2",
     "dotenv": "^4.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "mocha": "^4.0.1",
     "nock": "^9.1.0",
     "nyc": "^11.3.0",
