@@ -8,6 +8,20 @@
 
 > Transactional and marketing email templates and builder for RevolutionUC
 
+__Table of Contents__
+
+- [Usage](#usage)
+  - [API](#api)
+  - [Using Marketing Emails (templated)](#using-marketing-emails-templated)
+  - [List of Available Templates](#list-of-available-templates)
+- [Developing](#developing)
+- [Creating and Modifying Email Templates / Styles](#creating-and-modifying-email-templates-/-styles)
+- [Using an Email Template in Mailchimp](#using-an-email-template-in-mailchimp)
+- [Using Mailchimp Variables (aka Merge Tags)](#using-mailchimp-variables-aka-merge-tags)
+- [Known Issues](#known-issues)
+- [The terrible truth about html emails](#the-terrible-truth-about-html-emails)
+- [Tests](#tests)
+
 ## Usage
 
 Install the module as a dependency with `npm install --save github:revolutionuc/revolutionuc-emails`. Next, use the api to build emails:
@@ -45,7 +59,7 @@ Another example with a `verifyEmail` template:
 TODO
 ```
 
-### Marketing emails (templated)
+### Using Marketing Emails (templated)
 
 The email builder allows templates to be built ready with variable placeholders for marketing purposes (ex: MailChimp). To build an email ready for MailChimp, simply pass `null` for template data:
 
@@ -56,7 +70,7 @@ const content = await build('welcome', null)
 
 Or use `npm run develop-build` (or `npm run build`) to build to `./dist/`.
 
-### Available templates
+### List of Available Templates
 
 All templates take a `subject` and `shortDescription` template variables by default. In addition, each template has its own variables:
 
@@ -101,21 +115,51 @@ All templates take a `subject` and `shortDescription` template variables by defa
 
 *No additional variables*
 
-## Develop
+## Developing
 
 Get started hacking on revolutionuc-emails by:
 
 ```bash
-git clone https://github.com/revolutionuc/revolutionuc-emails.git
+git clone git@github.com:RevolutionUC/revolutionuc-emails.git
 cd revolutionuc-emails
 cp .env.example .env # replace with your api key and domain (mailgun.com to signup free - see below for other setup instructions)
 npm install
 npm run build # or `npm run develop-build` to watch
 ```
 
-### Creating a new email template
+## Creating and Modifying Email Templates / Styles
 
-[Nunjucks](https://github.com/mozilla/nunjucks) is the templating engine used for all templates.
+A how-to guide for creating and modifying email templates: first, setup your environment:
+
+### 1
+
+Install [Node.js](https://nodejs.org/en/) (`brew install node` on macOS) and [git](https://git-scm.com/downloads) (`brew install git` on macOS). You'll need Node.js v8.0.0 or newer.
+
+### 2
+
+Clone and install dependencies (note: some dependencies may warn that they are deprecated, this is ok), then open in your favorite text editor:
+
+```sh
+$ git clone git@github.com:RevolutionUC/revolutionuc-emails.git
+$ cd revolutionuc-emails
+$ npm install
+$ code .
+```
+
+### 3
+
+Run develop-build for changes, then open your browser to [http://localhost:3000](http://localhost:3000) to preview templates:
+
+```sh
+$ npm run develop-build
+# visit http://localhost:3000
+```
+
+### 4
+
+With develop-build running, edit template files in `templates/` or edit styling in `templates/master.njk`, then check out the changes in your browser (auto-refreshed by BrowserSync!). To create a new template, just copy and existing template.
+
+[Nunjucks](https://github.com/mozilla/nunjucks) is the templating engine used for all templates. Nunjucks is an extension of HTML. The HTML layout is written in [heml](https://heml.io/docs/getting-started/overview). heml converts high-level tags like `<row></row>` and `<column></column>` to old-school HTML tables so all email clients are able to render. See the heml docs to learn about working with layouts, buttons, etc.
 
 Start by creating a new template in `templates/`. For example, a new template could be called `awesome.njk` which extends `master.njk`. An example template looks like:
 
@@ -124,10 +168,40 @@ Start by creating a new template in `templates/`. For example, a new template co
 
 {% block body %}
 <h1>My awesome template!</h1>
+
+<button href="http://revolutionuc.com/register/" target="_blank">Call to Action</button>
 {% endblock %}
 ```
 
-Then, to get a preview of your template, run `npm run build`. This builds all templates to `./dist/` and runs a small file server to serve the html and plain text files. When a change is made to a templates, that template is rebuilt.
+Note: the builder is inefficient (it rebuilds all templates even if just one template is modified), so expect builds to take 1-2 seconds.
+
+### 5
+
+Once your satisfied with the template changes. Stop develop-build, then run:
+
+```sh
+$ npm run build
+```
+
+<!-- Then, to get a preview of your template, run `npm run build`. This builds all templates to `./dist/` and runs a small file server to serve the html and plain text files. When a change is made to a templates, that template is rebuilt. -->
+
+All templates are now in their final HTML form available in `dist/`. There, you can copy and paste the HTML into Mailchimp, the UC listserv, etc. See below for using Mailchimp variables for a personal touch in your emails.
+
+## Using an Email Template in Mailchimp
+
+If you're creating a new campaign, use [these steps](https://mailchimp.com/help/paste-in-html-to-create-a-campaign/) to paste the HTML from `npm run build`.
+
+If you're creating a new template, use [these steps](https://mailchimp.com/help/import-a-custom-html-template/) to paste the HTML from `npm run build`.
+
+## Using Mailchimp Variables (aka Merge Tags)
+
+Mailchimp documentation: [https://mailchimp.com/help/all-the-merge-tags-cheat-sheet/](https://mailchimp.com/help/all-the-merge-tags-cheat-sheet/)
+
+Use these merge tags, like `*|FNAME|*` and `*|LNAME|*`, when writing your templates for a personal touch when sending with Mailchimp.
+
+## Known Issues
+
+- When running `develop-build` and editing the `master.njk` template, the browser doesn't always reload with changes reflected. In this scenario, restart `develop-build`.
 
 ## The terrible truth about html emails
 
@@ -135,7 +209,7 @@ Then, to get a preview of your template, run `npm run build`. This builds all te
 >
 > -- [Zurb docs](http://foundation.zurb.com/emails/docs/tips-tricks.html#need-to-know) 
 
-This project uses [MJML](https://mjml.io/) library which allows us to write html5-like syntax and compile to old-school html table based formats, so writing our email templates in a table format is not necessary!
+This project uses [heml](https://heml.io/docs/getting-started/overview) library which allows us to write html5-like syntax and compile to old-school html table based formats, so writing our email templates in a table format is not necessary!
 
 ## Tests
 
