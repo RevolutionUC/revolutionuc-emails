@@ -10,7 +10,7 @@
 
 {% block main %}
 
-<h1>Hi, {{ firstName if firstName else '*|FNAME|*' }}!</h1>
+<h1>Hi, {{ firstName if firstName else '{{first_name}}' }}!</h1>
 
 {% if offWaitlist %}
     {# the hacker has been taken off the waitlist and onto the normal list, so make a note to the hacker #}
@@ -45,4 +45,6 @@ Please email us as soon as you find out you can attend at <a href="mailto:info@r
 
 <p><strong>I accidentally selected No!</strong><br />
 Please email us immediately at <a href="mailto:info@revolutionuc.com">info@revolutionuc.com</a> and we’ll update your registration..</p>
+
+<p>You can review the agreed to event waiver <a href="http://revolutionuc.com/waiver">here</a>.</p>
 {% endblock %}

@@ -6,7 +6,7 @@
 #}
 
 {% block main %}
-<h1>Hey, {{ firstName if firstName else '*|FNAME|*' }},</h1>
+<h1>Hey, {{ firstName if firstName else '{{first_name}}' }},</h1>
 
 <p>We’re excited to have you at RevolutionUC! Because you’re under 18, there is some extra information you need to know to get ready. Following these guidelines is mandatory, and necessary for compliance with university guidelines.</p>
 

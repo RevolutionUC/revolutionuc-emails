@@ -1,6 +1,6 @@
 <heml>
   <head>
-    <subject>{{ subject if subject else '*|MC:SUBJECT|*' }}</subject>
+    <subject>{{ subject if subject else '{{subject}}' }}</subject>
 
     {% if shortDescription %}
       <preview>{{ shortDescription }}</preview>
