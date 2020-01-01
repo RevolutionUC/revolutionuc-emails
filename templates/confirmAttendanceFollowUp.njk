@@ -7,7 +7,7 @@
 #}
 
 {% block main %}
-<h2>Hi, {{ firstName if firstName else '*|FNAME|*' }}!</h2>
+<h2>Hi, {{ firstName if firstName else '{{first_name}}' }}!</h2>
 
 <p>Thanks for confirming your attendance for RevolutionUC! Here’s what you need to know.</p>
 
@@ -49,4 +49,6 @@ Please send us an email at <a href="mailto:info@revolutionuc.com">info@revolutio
 
 <p><strong>We can’t wait to see you there!</strong><br />
 Get excited!</p>
+
+<p>You can review the agreed to event waiver <a href="http://revolutionuc.com/waiver">here</a>.</p>
 {% endblock %}

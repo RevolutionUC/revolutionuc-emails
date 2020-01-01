@@ -7,7 +7,7 @@
 #}
 
 {% block main %}
-<h1>Hey, {{ firstName if firstName else '*|FNAME|*' }}!</h1>
+<h1>Hey, {{ firstName if firstName else '{{first_name}}' }}!</h1>
 
 <p>To complete your {% if waitlist %}waitlist{% endif %} registration for RevolutionUC, please <a href="{{ verificationUrl if verificationUrl else '#' }}" target="_blank">verify your email address</a>.<p>
 
@@ -18,4 +18,6 @@
 <button href="{{ verificationUrl if verificationUrl else '#' }}" target="_blank">Verify Email</button>
 
 <p>Your registration will not be complete until you verify.<p>
+
+<p>You can review the agreed to event waiver <a href="http://revolutionuc.com/waiver">here</a>.</p>
 {% endblock %}
