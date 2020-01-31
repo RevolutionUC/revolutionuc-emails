@@ -3,13 +3,18 @@
 {#
   Additional arguements for this template:
     - firstName (the user's first name)
-    - qrImageSrc (direct link to a QR code image)
 #}
 
 {% block main %}
 <h2>Hi, {{ firstName if firstName else '{{first_name}}' }}!</h2>
 
 <p>Thanks for confirming your attendance for RevolutionUC! Here’s what you need to know.</p>
+
+<p><strong>Wristbands</strong><br />
+Wristbands will be handed out at check-in and are required for meals and swag. Once we reach our capacity, we won't be able to give out extra wristbands. Even if you've confirmed your attendance, if you arrive after we've run out of wristbands, you'll still be able to participate in hacking, however, unfortunately, <em>we won't be able to offer you meals or swag.</em></p>
+
+<p><strong>Checking In</strong><br />
+Check-in will be in Zimmer Hall. See <a href="https://www.uc.edu/content/dam/common/docs/maps/campus_map_west.pdf" target="_blank">this campus map</a> if you’re unsure where to go. If you arrive after 1:00 PM on Saturday, please go straight to our hacking area in Rhodes 801 instead.</p>
 
 <p><strong>What to Bring</strong><br />
 Please bring a valid school ID for check-in, your laptop, phone, or anything else you want to hack on, any chargers for your device(s), and a positive attitude! We also recommend bringing basic toiletries (toothbrush, deodorant, etc), a pillow/blanket (if you choose to nap). Please note that Ethernet access will be limited, <em>so plan to use a Wi-Fi connection.</em></p>
@@ -20,12 +25,6 @@ The maximum team size is four. Don’t have a team? No worries! We’ll have a t
 <p><strong>Schedule</strong><br />
 Check-in will open at 11:00 AM on February 22nd and the opening ceremony is set to begin at 12:00 PM. The closing ceremony will start at around 3:15 PM on February 23rd. See <a href="http://revolutionuc.com/schedule" target="_blank">revolutionuc.com/schedule</a> for full and up to date schedule details.</p>
 
-<p><strong>Checking In</strong><br />
-Check-in will be in Zimmer Hall. See <a href="https://www.uc.edu/content/dam/common/docs/maps/campus_map_west.pdf" target="_blank">this campus map</a> if you’re unsure where to go. If you arrive after 1:00 PM on Saturday, please go straight to our hacking area in Rhodes 801 instead.</p>
-<!--
-<p>The QR code below can be presented during check-in to expediate the process.</p>
-<center><img src="{{ qrImageSrc }}" alt="A QR code used for check-in for RevolutionUC"></center>
--->
 <p><strong>Parking</strong><br />
 UC has plenty of parking garages! For a full list, check out the university’s <a href="https://www.uc.edu/parking/visitors-maps.html" target="_blank">Maps and Visitor Info page</a>. The hackathon occurs on West Campus, so we would recommend parking at <a href="https://www.uc.edu/parking/visitors-maps.html#wa" target="_blank">Woodside Garage</a> or <a href="https://www.uc.edu/parking/visitors-maps.html#cg" target="_blank">Campus Green Garage</a>.</p>
 

@@ -3,13 +3,15 @@
 {#
   Additional arguements for this template:
     - firstName (the user's first name)
-    - qrImageSrc (direct link to a QR code image)
 #}
 
 {% block main %}
 <h1>Hi, {{ firstName if firstName else 'Hacker' }}!</h1>
 
-<p>RevolutionUC is tomorrow! Here’s some important information, including your QR code for check-in:</p>
+<p>RevolutionUC is tomorrow! Here’s some important information:</p>
+
+<p><strong>Wristbands</strong><br />
+Wristbands will be handed out at check-in and are required for meals and swag. Once we reach our capacity, we won't be able to give out extra wristbands. Even if you've confirmed your attendance, if you arrive after we've run out of wristbands, you'll still be able to participate in hacking, however, unfortunately, <em>we won't be able to offer you meals or swag.</em></p>
 
 <p><strong>Check-in and Where To Go</strong><br />
 Please bring a valid school issued ID for check-in. Check-in will be in the Zimmer Hall 5th Floor Lobby. See the map below if you’re unsure how to get to the check-in area. If you arrive after 1:00 PM on Saturday, please go straight to our hacking area in Rhodes Hall 801 instead.</p>
