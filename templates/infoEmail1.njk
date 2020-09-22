@@ -11,21 +11,18 @@
 <h3>Attendance Confirmation</h3>
 <p>You should have receieved an attendance confirmation email. If you’re planning to attend RevolutionUC, you must confirm your attendance.</p>
 
-<p><strong>Wristbands</strong><br />
-Wristbands will be handed out at check-in and are required for meals and swag. Once we reach our capacity, we won't be able to give out extra wristbands. If you arrive after we've run out of wristbands, you'll still be able to participate in hacking, however, unfortunately, <em>we won't be able to offer you meals or swag.</em></p>
+{% extends dirname + '/partials/Wristbands.njk'%} 
 
 {% include dirname + '/partials/schedule.njk' %}
 
 <h3>Sponsors</h3>
 <p>We’ve got some great sponsors this year including 84.51°, Fifth Third, MetaRouter, Atomic Robot, and more! Sponsors will be on-site to chat before and after the opening ceremony. See <a href="https://revolutionuc.com/sponsors/" target="_blank">revolutionuc.com/sponsors</a> for the full list of sponsors and partners!</p>
 
-<h3>Travel Reimbursements</h3>
-<p>We offer carpool reimbursement on a case by case basis - receipts must be provided to receive travel reimbursement. We don’t offer reimbursement for flights. As a standard rule, we’ll reimburse 15 cents per mile between UC and your school, up to $60 for a car with more than one participant, or $40 if traveling alone. If we have more reimbursement requests than anticipated, we’ll drop the per mile rate fairly to accommodate all reimbursement applicants. You’ll be able to apply for travel reimbursement following the event. If you’d like more information please do not hesitate to email us at <a mailto="info@revolutionuc.com">info@revolutionuc.com</a>.</p>
+{% include dirname + '/partials/TravelReimbursement.njk' %}
 
-<p><strong>Socials</strong></p>
-<p><a href="https://twitter.com/revolution_uc" target="_blank">Follow RevolutionUC</a> on Twitter and <a href="https://www.facebook.com/events/522139401962801/" target="_blank">share the event</a> on Facebook! Don't forget to <a href="https://www.instagram.com/revolution.uc/" target="_blank">like our posts</a> on Instagram!</p>
+{% include dirname + '/partials/Socials.njk' %}
 
-<p>If you're over 18, you can review the event waiver you agreed to <a href="http://revolutionuc.com/waiver" target="_blank">here</a>.</p>
+{% extends dirname + 'partials/Waiver.njk' %}
 
 <p><strong>Can’t wait to see you there!</strong></p>
 
