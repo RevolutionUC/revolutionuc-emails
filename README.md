@@ -22,10 +22,6 @@ __Table of Contents__
 - [The terrible truth about html emails](#the-terrible-truth-about-html-emails)
 - [Tests](#tests)
 
-## Usage
-
-Install the module as a dependency with `npm install --save github:revolutionuc/revolutionuc-emails`. Next, use the api to build emails:
-
 ### API
 
 The API allows the creation of html and plain text based transactional emails (ex: Mailgun).
