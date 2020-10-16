@@ -6,6 +6,8 @@
   "scripts": {
     "develop-build": "node ./bin/developBuild.js",
     "build": "node ./bin/build.js",
+    "start": "node ./server.js",
+    "develop": "nodemon ./server.js",
     "test": "./node_modules/.bin/mocha",
     "coverage": "./node_modules/.bin/nyc report ./node_modules/.bin/_mocha"
   },
@@ -29,6 +31,7 @@
   },
   "homepage": "https://github.com/revolutionuc/revolutionuc-emails#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "heml": "^1.1.3",
