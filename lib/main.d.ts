@@ -15,4 +15,4 @@ interface templateData {
 
 }
 export declare function build(templateName: string, templateData: templateData) : Promise<string>
-export declare function send(mailgunApiKey: string, mailgunDomain: string, from: string, to: string, subject: string, html: string): Promise<any>;
+export declare function send(mailgunApiKey: string, mailgunDomain: string, from: string, to: string, subject: string, html: string): Promise<import('mailgun-js').messages.SendResponse>;
