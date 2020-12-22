@@ -11,7 +11,7 @@ interface templateData {
   /* Used in confirmAttendance template */
   noConfirmationUrl?: string;
   /* Used in confirmAttendance template */
-  offWaitlist: boolean
+  offWaitlist?: boolean
 
 }
 export declare function build(templateName: string, templateData: templateData) : Promise<string>
