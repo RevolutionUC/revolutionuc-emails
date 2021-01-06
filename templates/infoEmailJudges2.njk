@@ -1,0 +1,17 @@
+{% extends dirname + '/master.njk' %}
+
+{#
+  Additional arguements for this template:
+    - firstName (the judge's first name)
+    - judgingLoginLink (link to log in to judging portal)
+#}
+
+{% block main %}
+<h1>Hey, {{ firstName if firstName else '{{first_name}}' }},</h1>
+
+<p>Thank you for signing up to judge at RevolutionUC.</p>
+
+<button href="{{ judgingLoginLink if judgingLoginLink else '#' }}" target="_blank">Open Judging Portal</button>
+
+<p>We look forward to having you at RevolutionUC!</p>
+{% endblock %}
