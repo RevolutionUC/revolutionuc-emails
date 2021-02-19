@@ -3,6 +3,8 @@
 {#
   Additional arguements for this template:
     - firstName (the user's first name)
+    - discordLink (discord access link)
+    - hopinLink (hopin access link)
 #}
 
 {% block main %}
@@ -10,11 +12,11 @@
 
 <p>RevolutionUC is tomorrow! Here’s some important information:</p>
 
-{% extends dirname + '/partials/Check-In.njk' %}
+{% include dirname + '/partials/VirtualLinks.njk' %}
 
 {% include dirname + '/partials/Schedule.njk' %}
 
-{% extends dirname + '/partials/Waiver.njk' %}
+{% include dirname + '/partials/CheckIn.njk' %}
 
 {% include dirname + '/partials/WhatToBring.njk' %}
 
@@ -35,12 +37,8 @@ We have some exciting workshops planned for you! Hear from our sponsor Fifth Thi
 Need some help with where to start? Or what technologies we recommend using? Check out the Resources page on our website <a href="https://revolutionuc.com/resources/">here</a>!
 </p>
 
-{% include dirname + '/partials/Virtual.njk' %}
-
 {% include dirname + '/partials/Lattice.njk' %}
 
 {% include dirname + '/partials/Socials.njk' %}
 
-<p><strong>What if I can no longer go to RevolutionUC?</strong><br />
-Please send us an email at <a href="mailto:info@revolutionuc.com">info@revolutionuc.com</a>.</p>
 {% endblock %}
