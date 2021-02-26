@@ -1,6 +1,8 @@
 {% extends dirname + '/master.njk' %}
 
 {% block main %}
+<h1>Hey, {{ firstName if firstName else '{{first_name}}' }}!</h1>
+
 <p>Thank you for attending RevolutionUC! Below is important information on the post event survey and prize information</p>
 
 <h3>Survey</h3>
