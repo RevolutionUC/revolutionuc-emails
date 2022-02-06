@@ -3,8 +3,8 @@ const buildTemplate = require('./util/buildTemplate')
 const rename = require('./util/rename')
 const removeFolder = require('./util/removeFolder')
 
-// templates to watch: all templates in './templates/' (except for master.njk)
-const templates = ['./templates/*.njk']
+// templates to watch: all templates in './templates/'
+const templates = ['./templates/*.njk', './templates/*.scss']
 const distFolder = './dist/'
 
 

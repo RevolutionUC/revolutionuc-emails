@@ -1,13 +1,4 @@
-.socials {
-  background: $white;
-
-  .socials__item {
-    a {
-      color: $primary-color;
-    }
-
-    img {
-      margin: 0 auto;
-    }
-  }
+.social-link {
+  width: 15px;
+  height: 15px;
 }
