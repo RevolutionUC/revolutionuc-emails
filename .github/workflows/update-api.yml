@@ -1,5 +1,8 @@
 name: GitHub Actions Demo
-on: [push]
+on:
+  push:
+    branches:
+      - master
 jobs:
   Update-Api-Dep:
     runs-on: ubuntu-latest
@@ -10,6 +13,7 @@ jobs:
       - uses: actions/checkout@master
         with:
           repository: RevolutionUC/revolutionuc-api
+          token: ${{ secrets.GITHUB_TOKEN }}
       - run: npm install
       - run: npm update revolutionuc-emails
       - run: git push
