@@ -1,0 +1,11 @@
+name: GitHub Actions Demo
+on: [push]
+jobs:
+  Update-Api-Dep:
+    runs-on: ubuntu-latest
+    steps:
+      - run: git clone https://github.com/RevolutionUC/revolutionuc-api.git
+      - run: cd revolutionuc-api
+      - run: npm install
+      - run: npm update revolutionuc-emails
+      - run: git push
