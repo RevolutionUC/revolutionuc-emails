@@ -16,4 +16,6 @@ jobs:
           token: ${{ secrets.PAT }}
       - run: npm install
       - run: npm update revolutionuc-emails
+      - run: git add package-lock.json
+      - run: git commit -m "emails package auto update"
       - run: git push
