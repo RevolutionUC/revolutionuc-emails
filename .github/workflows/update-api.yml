@@ -4,6 +4,9 @@ jobs:
   Update-Api-Dep:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
       - run: git clone https://github.com/RevolutionUC/revolutionuc-api.git
       - run: cd revolutionuc-api
       - run: npm install
