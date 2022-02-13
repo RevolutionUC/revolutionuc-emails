@@ -17,6 +17,7 @@ jobs:
           token: ${{ secrets.PAT }}
 
       - run: npm install
+      - run: npm update revolutionuc-emails
 
       - uses: EndBug/add-and-commit@v8
         with:
