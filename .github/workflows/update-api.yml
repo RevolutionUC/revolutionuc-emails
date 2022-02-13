@@ -10,12 +10,17 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
+
       - uses: actions/checkout@master
         with:
           repository: RevolutionUC/revolutionuc-api
           token: ${{ secrets.PAT }}
+
       - run: npm install
-      - run: npm update revolutionuc-emails
-      - run: git add package-lock.json
-      - run: git commit -m "emails package auto update"
-      - run: git push
+
+      - uses: EndBug/add-and-commit@v8
+        with:
+          add: "package-lock.json"
+          default_author: user_info
+          message: "emails package auto update"
+          push: true
