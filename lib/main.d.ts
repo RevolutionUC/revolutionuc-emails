@@ -1,3 +1,8 @@
+import type Mailgun from "mailgun.js";
+
+type MailGunClient = ReturnType<Mailgun["client"]>;
+type MailGunSendResult = ReturnType<MailGunClient["messages"]["create"]>;
+
 interface templateData {
   firstName?: string;
   subject?: string;
@@ -13,6 +18,7 @@ interface templateData {
   /* Used in confirmAttendance template */
   offWaitlist?: boolean;
 }
+
 export declare function build(
   templateName: string,
   templateData: templateData
@@ -24,4 +30,4 @@ export declare function send(
   to: string,
   subject: string,
   html: string
-): Promise<import("mailgunjs").messages.SendResponse>;
+): MailGunSendResult;
