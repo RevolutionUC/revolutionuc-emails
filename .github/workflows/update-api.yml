@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@master
         with:
           repository: RevolutionUC/revolutionuc-api
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.TOKEN }}
 
       - run: npm install
       - run: npm update revolutionuc-emails
