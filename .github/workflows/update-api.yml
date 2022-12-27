@@ -14,6 +14,8 @@ jobs:
       - uses: actions/checkout@master
         with:
           repository: RevolutionUC/revolutionuc-api
+          token: ${{ secrets.PAT_ORG }}
+          
           
 
       - run: npm install
