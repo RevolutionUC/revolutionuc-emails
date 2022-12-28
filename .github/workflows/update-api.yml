@@ -7,9 +7,9 @@ jobs:
   Update-Api-Dep:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: "14"
+          node-version: "16"
 
       - uses: actions/checkout@master
         with:
@@ -18,12 +18,12 @@ jobs:
           
           
 
-      - run: npm install
-      - run: npm update revolutionuc-emails
+      - run: yarn install
+      - run: yarn upgrade revolutionuc-emails
 
-      - uses: EndBug/add-and-commit@v8
+      - uses: EndBug/add-and-commit@v9
         with:
-          add: "package-lock.json"
+          add: "yarn.lock"
           default_author: user_info
           message: "emails package auto update"
           push: true
