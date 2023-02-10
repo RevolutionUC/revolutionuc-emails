@@ -6,8 +6,8 @@
   "scripts": {
     "build": "node ./bin/build.js",
     "start": "node ./server.js",
-    "develop:build": "node ./bin/developBuild.js",
-    "develop:start": "nodemon ./server.js",
+    "develop:build": "nodemon --watch templates -e nj,njk --exec \"npm run build\"",
+    "develop:start": "node ./server.js",
     "develop": "concurrently \"npm run develop:build\" \"npm run develop:start\"",
     "test": "./node_modules/.bin/mocha",
     "coverage": "./node_modules/.bin/nyc report ./node_modules/.bin/_mocha",
