@@ -10,9 +10,17 @@
 
 <p>We’re excited to see you at RevolutionUC this weekend! Here’s some important information:</p>
 
-{% extends dirname + '/partials/CheckIn.njk' %}
+{% include dirname + '/partials/Inperson.njk' %}
+
+{% include dirname + '/partials/CheckIn-Inperson.njk' %}
+
+{% include dirname + '/partials/Parking.njk' %}
 
 {% include dirname + '/partials/Schedule.njk' %}
+
+{% include dirname + '/partials/Food.njk' %}
+
+{% include dirname + '/partials/TravelReimbursement.njk' %}
 
 {% include dirname + '/partials/WhatToBring.njk' %}
 
@@ -20,16 +28,16 @@
 
 {% include dirname + '/partials/HackSubmissions.njk' %}
 
-<p><strong>Tech Talks</strong><br />
-Some of our awesome sponsors will be giving tech talks! Stay tuned for our full schedule.</p>
+{# <p><strong>Tech Talks</strong><br />
+Some of our awesome sponsors will be giving tech talks! Stay tuned for our full schedule.</p> #}
 
-{% include dirname + '/partials/Mentors.njk' %}
+{# {% include dirname + '/partials/Mentors.njk' %} #}
 
-{% include dirname + '/partials/MiniEvents.njk' %}
-
-{% include dirname + '/partials/Inperson.njk' %}
+{# {% include dirname + '/partials/MiniEvents.njk' %} #}
 
 {% include dirname + '/partials/Lattice.njk' %}
+
+{% include dirname + '/partials/Discord.njk' %}
 
 {% include dirname + '/partials/Waiver.njk' %}
 

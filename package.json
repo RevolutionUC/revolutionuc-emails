@@ -14,7 +14,7 @@
     "testEmail": "node ./bin/testEmail.js"
   },
   "engines": {
-    "node": "16.x"
+    "node": ">=16.x"
   },
   "repository": {
     "type": "git",
