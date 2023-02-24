@@ -10,22 +10,25 @@
 {% block main %}
 <h1>Hey, {{ firstName if firstName else '{{first_name}}' }}!</h1>
 
-<p>RevolutionUC is starting today at noon! Here’s some important information:</p>
+<p>RevolutionUC is starting TOMORROW at noon! Here&apos;s some important information:</p>
 
-{% include dirname + '/partials/VirtualLinks.njk' %}
+{% include dirname + '/partials/Inperson.njk' %}
+
+{% include dirname + '/partials/1819Transportation.njk' %}
 
 {% include dirname + '/partials/Schedule.njk' %}
 
-{% include dirname + '/partials/CheckIn.njk' %}
+{% include dirname + '/partials/CheckIn-Inperson.njk' %}
 
 {% include dirname + '/partials/WhatToBring.njk' %}
+
+{% include dirname + '/partials/Discord.njk' %}
+
+{% include dirname + '/partials/Workshops.njk' %}
 
 {% include dirname + '/partials/AvailableHardware.njk' %}
 
 {% include dirname + '/partials/HackSubmissions.njk' %}
-
-<p><strong>Workshops</strong><br />
-We have some exciting workshops planned for you! Hear from our sponsor Fifth Third about serverless computing, learn about augmented reality with Digital Futures, or build a Pokedex using React.</p>
 
 {% include dirname + '/partials/Mentors.njk' %}
 
