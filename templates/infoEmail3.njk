@@ -8,7 +8,7 @@
 {% block main %}
 <h1>Hey, {{ firstName if firstName else '{{first_name}}' }}!</h1>
 
-<p>We’re excited to see you at RevolutionUC this weekend! Here’s some important information:</p>
+<p>We&apos;re excited to see you at RevolutionUC this weekend! Here&apos;s some important information:</p>
 
 {% include dirname + '/partials/Inperson.njk' %}
 
@@ -19,8 +19,6 @@
 {% include dirname + '/partials/Schedule.njk' %}
 
 {% include dirname + '/partials/Food.njk' %}
-
-{% include dirname + '/partials/TravelReimbursement.njk' %}
 
 {% include dirname + '/partials/WhatToBring.njk' %}
 
@@ -34,8 +32,6 @@ Some of our awesome sponsors will be giving tech talks! Stay tuned for our full 
 {# {% include dirname + '/partials/Mentors.njk' %} #}
 
 {# {% include dirname + '/partials/MiniEvents.njk' %} #}
-
-{% include dirname + '/partials/Lattice.njk' %}
 
 {% include dirname + '/partials/Discord.njk' %}
 
