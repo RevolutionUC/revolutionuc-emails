@@ -1,0 +1,17 @@
+{% extends dirname + '/master.njk' %}
+
+{#
+  Additional arguements for this template:
+    - firstName (the user's first name)
+#}
+
+{% block main %}
+<h1>Hey, {{ firstName if firstName else '{{first_name}}' }}!</h1>
+
+<p>Thank you for registering for RevolutionUC.  We’ve received an overwhelming response, and while we’d love to accommodate everyone, we are currently at full capacity. As a result, we have put you on our <strong>waitlist</strong>.</p>
+
+<p>At the event day, after check-in ends at 12 PM and if space allows, we will start admitting participants off the waitlist on a first-come, first-serve basis based on order of arrival at the venue, until we have reached our maximum capacity. After this, if you're still on our waitlist, we unfortunately won't be able to provide you a spot in the hackathon.</p>
+
+<p>We appreciate your enthusiasm and hope to see you at RevolutionUC!</p>
+
+{% endblock %}
