@@ -1,0 +1,43 @@
+{% extends dirname + '/master.njk' %}
+
+{#
+  Additional arguements for this template:
+    - firstName (the user's first name)
+#}
+
+{% block main %}
+<h1>Hey, {{ firstName if firstName else '{{first_name}}' }}!</h1>
+
+<p>RevolutionUC is almost here, and we've got something exciting for you!</p>
+<p>ICR is hosting a full <strong>Capture The Flag (CTF)</strong> challenge running throughout the entire event!</p>
+
+<h4>If you're waitlisted, you may not get a spot at the hackathon unless one opens up, but you’re still welcome to participate in the CTF virtually!</h4>
+
+<p>
+    New to CTFs? No worries! We have beginner-friendly challenges to help you get started. 
+    Already a CTF veteran? Get ready for some seriously tough problems.
+</p>
+
+<h3>Interested in trying it out?</h3>
+<p><strong>Sign up here: </strong><a href="https://ctf.icr-team.com/" target="_blank">https://ctf.icr-team.com/</a></p>
+
+<p><strong>Rules and details: </strong><a href="https://ctf.icr-team.com/rules" target="_blank">https://ctf.icr-team.com/rules</a></p>
+
+<p><strong>Important: </strong>
+<ul>
+    <li>This challenge is only open to people participating in the hackathon, so make sure you sign up with the same email you used to register for RevolutionUC.</li>
+    <li>All communication about the CTF will take place in the <strong>CTF channel on Discord.</strong></li>
+    <li>Winner(s) must be present at the RevolutionUC award ceremony.</li>
+</ul>
+
+<h3>Never done a CTF before? Here are a few quick tips:</h3>
+<ul>
+    <li>Check out <a href="https://ctftime.org/ctf-wtf/" target="_blank">https://ctftime.org/ctf-wtf</a> for a short description</li>
+    <li>Make sure to have a Linux VM, like a recent Ubuntu or Kali</li>
+    <li>Install Docker</li>
+    <li>Reverse engineering software like Ghidra installed</li>
+</ul>
+
+<p><strong>Can’t wait to see you all this weekend! Happy hacking!</strong></p>
+
+{% endblock %}
