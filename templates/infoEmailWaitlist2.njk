@@ -1,0 +1,15 @@
+{% extends dirname + '/master.njk' %}
+
+{#
+  Additional arguements for this template:
+    - firstName (the user's first name)
+#}
+
+{% block main %}
+<h1>Hey, {{ firstName if firstName else '{{first_name}}' }}!</h1>
+
+<p>Although you are on the waitlist, you can still show up right now to get on the queue, it’s only at 12:15 that we then start taking people off that depending on space!</p>
+
+<p>We hope to see you at RevolutionUC!</p>
+
+{% endblock %}
