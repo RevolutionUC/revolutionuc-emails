@@ -19,16 +19,12 @@ jobs:
         with:
           version: latest
           
-
       - run: pnpm install
       - run: pnpm upgrade revolutionuc-emails
-      - run: yarn install
-      - run: yarn upgrade revolutionuc-emails
 
       - uses: EndBug/add-and-commit@v9
         with:
           add: |
-            - yarn.lock
             - pnpm-lock.yaml
           default_author: user_info
           message: "emails package auto update"
